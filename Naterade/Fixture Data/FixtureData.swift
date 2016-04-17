@@ -74,8 +74,8 @@ struct FixtureData {
             default:
                 return nil
             }
-
-            return DoseEntry(startDate: dateFormatter.dateFromString(entry["start_at"] as! String)!, endDate: dateFormatter.dateFromString(entry["end_at"] as! String)!, value: entry["amount"] as! Double, unit: unit, description: nil)
+          
+            return DoseEntry(type: PumpEventType.TempBasal, startDate: dateFormatter.dateFromString(entry["start_at"] as! String)!, endDate: dateFormatter.dateFromString(entry["end_at"] as! String)!, value: entry["amount"] as! Double, unit: unit, description: nil)
         })
     }
 }
