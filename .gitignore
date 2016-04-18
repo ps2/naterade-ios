@@ -64,3 +64,4 @@ fastlane/screenshots
 
 # Sensitive details about remote backup
 RemoteSettings.plist
+.DS_Store
