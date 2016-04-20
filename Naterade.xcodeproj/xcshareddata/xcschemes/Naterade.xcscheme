@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "437A289B1C2F66DD00009647"
                BuildableName = "MinimedKitTests.xctest"
                BlueprintName = "MinimedKitTests"
+               ReferencedContainer = "container:Naterade.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "43F78D2A1C8FC58F002152D1"
+               BuildableName = "NateradeTests.xctest"
+               BlueprintName = "NateradeTests"
                ReferencedContainer = "container:Naterade.xcodeproj">
             </BuildableReference>
          </TestableReference>

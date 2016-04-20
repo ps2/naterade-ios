@@ -20,18 +20,21 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
 
     @IBOutlet var devicesSectionTitleView: UIView!
 
-    private var peripheralStateChangeContext = 0
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataManagerObserver = NSNotificationCenter.defaultCenter().addObserverForName(RileyLinkManagerDidDiscoverDeviceNotification, object: dataManager, queue: nil) { [weak self = self] (note) -> Void in
-            if let strongSelf = self,
-                deviceManager = strongSelf.dataManager.rileyLinkManager
-            {
-                strongSelf.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: deviceManager.devices.count - 1, inSection: 1)], withRowAnimation: .Automatic)
-
-                deviceManager.devices.last?.peripheral.addObserver(strongSelf, forKeyPath: "state", options: [], context: &(strongSelf.peripheralStateChangeContext))
+        dataManagerObserver = NSNotificationCenter.defaultCenter().addObserverForName(nil, object: dataManager, queue: nil) { [weak self = self] (note) -> Void in
+            if let deviceManager = self?.dataManager.rileyLinkManager {
+                switch note.name {
+                case RileyLinkManagerDidDiscoverDeviceNotification:
+                    self?.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: deviceManager.devices.count - 1, inSection: Section.Devices.rawValue)], withRowAnimation: .Automatic)
+                case RileyLinkDeviceConnectionStateDidChangeNotification:
+                    if let device = note.userInfo?[RileyLinkDeviceKey] as? RileyLinkDevice, index = deviceManager.devices.indexOf(device) {
+                        self?.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: Section.Devices.rawValue)], withRowAnimation: .None)
+                    }
+                default:
+                    break
+                }
             }
         }
     }
@@ -41,10 +44,6 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
 
         if let deviceManager = dataManager.rileyLinkManager {
             deviceManager.deviceScanningEnabled = true
-
-            deviceManager.devices.forEach { device in
-                device.peripheral.addObserver(self, forKeyPath: "state", options: [], context: &peripheralStateChangeContext)
-            }
         }
 
         if dataManager.transmitterID != nil, let glucoseStore = dataManager.glucoseStore where glucoseStore.authorizationRequired {
@@ -54,42 +53,24 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
 
         if let deviceManager = dataManager.rileyLinkManager {
             deviceManager.deviceScanningEnabled = false
-
-            deviceManager.devices.forEach { device in
-                device.peripheral.removeObserver(self, forKeyPath: "state", context: &peripheralStateChangeContext)
-            }
         }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
     }
 
     deinit {
         dataManagerObserver = nil
     }
 
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if context == &peripheralStateChangeContext {
-            if let peripheral = object as? CBPeripheral,
-                deviceManager = dataManager.rileyLinkManager
-            {
-                tableView.beginUpdates()
-                for (index, device) in deviceManager.devices.enumerate() {
-                    if device.peripheral == peripheral {
-                        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 1)], withRowAnimation: .Automatic)
-                    }
-                }
-                tableView.endUpdates()
-            }
-        } else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-        }
-    }
-
-    private var dataManager: PumpDataManager {
-        return PumpDataManager.sharedManager
+    private var dataManager: DeviceDataManager {
+        return DeviceDataManager.sharedManager
     }
 
     private var dataManagerObserver: AnyObject? {
@@ -101,10 +82,17 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
     }
 
     private enum Section: Int {
-        case Configuration = 0
+        case Loop = 0
+        case Configuration
         case Devices
 
-        static let count = 2
+        static let count = 3
+    }
+
+    private enum LoopRow: Int {
+        case Dosing = 0
+
+        static let count = 1
     }
 
     private enum ConfigurationRow: Int {
@@ -115,8 +103,10 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
         case BasalRate
         case CarbRatio
         case InsulinSensitivity
+        case MaxBasal
+        case MaxBolus
 
-        static let count = 7
+        static let count = 9
     }
 
     private lazy var valueNumberFormatter: NSNumberFormatter = {
@@ -142,6 +132,8 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
+        case .Loop:
+            return LoopRow.count
         case .Configuration:
             return ConfigurationRow.count
         case .Devices:
@@ -158,6 +150,18 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
         let cell: UITableViewCell
 
         switch Section(rawValue: indexPath.section)! {
+        case .Loop:
+            switch LoopRow(rawValue: indexPath.section)! {
+            case .Dosing:
+                let switchCell = tableView.dequeueReusableCellWithIdentifier(SwitchTableViewCell.className, forIndexPath: indexPath) as! SwitchTableViewCell
+
+                switchCell.`switch`?.on = dataManager.loopManager.dosingEnabled
+                switchCell.titleLabel.text = NSLocalizedString("Closed Loop", comment: "The title text for the looping enabled switch cell")
+
+                switchCell.`switch`?.addTarget(self, action: #selector(dosingEnabledChanged(_:)), forControlEvents: .ValueChanged)
+
+                return switchCell
+            }
         case .Configuration:
             let configCell = tableView.dequeueReusableCellWithIdentifier(ConfigCellIdentifier, forIndexPath: indexPath)
 
@@ -183,8 +187,6 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                     let unit = carbRatioSchedule.unit
                     let value = carbRatioSchedule.averageQuantity().doubleValueForUnit(unit)
 
-                    valueNumberFormatter.minimumFractionDigits = 2
-
                     configCell.detailTextLabel?.text = "\(valueNumberFormatter.stringFromNumber(value)!) \(unit)/U"
                 } else {
                     configCell.detailTextLabel?.text = TapToSetString
@@ -195,8 +197,6 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                 if let insulinSensitivitySchedule = dataManager.insulinSensitivitySchedule {
                     let unit = insulinSensitivitySchedule.unit
                     let value = insulinSensitivitySchedule.averageQuantity().doubleValueForUnit(unit)
-
-                    valueNumberFormatter.minimumFractionDigits = unit == HKUnit.milligramsPerDeciliterUnit() ? 0 : 1
 
                     configCell.detailTextLabel?.text = "\(valueNumberFormatter.stringFromNumber(value)!) \(unit)/U"
                 } else {
@@ -209,8 +209,6 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                     let unit = glucoseTargetRangeSchedule.unit
                     let value = glucoseTargetRangeSchedule.valueAt(NSDate())
 
-                    valueNumberFormatter.minimumFractionDigits = unit == HKUnit.milligramsPerDeciliterUnit() ? 0 : 1
-
                     configCell.detailTextLabel?.text = "\(valueNumberFormatter.stringFromNumber(value.minValue)!) – \(valueNumberFormatter.stringFromNumber(value.maxValue)!) \(unit)"
                 } else {
                     configCell.detailTextLabel?.text = TapToSetString
@@ -221,6 +219,22 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                 if let insulinActionDuration = dataManager.insulinActionDuration {
 
                     configCell.detailTextLabel?.text = "\(insulinActionDuration.hours) hours"
+                } else {
+                    configCell.detailTextLabel?.text = TapToSetString
+                }
+            case .MaxBasal:
+                configCell.textLabel?.text = NSLocalizedString("Maximum Basal Rate", comment: "The title text for the maximum basal rate value")
+
+                if let maxBasal = dataManager.maximumBasalRatePerHour {
+                    configCell.detailTextLabel?.text = "\(valueNumberFormatter.stringFromNumber(maxBasal)!) U/hour"
+                } else {
+                    configCell.detailTextLabel?.text = TapToSetString
+                }
+            case .MaxBolus:
+                configCell.textLabel?.text = NSLocalizedString("Maximum Bolus", comment: "The title text for the maximum bolus value")
+
+                if let maxBolus = dataManager.maximumBolus {
+                    configCell.detailTextLabel?.text = "\(valueNumberFormatter.stringFromNumber(maxBolus)!) U"
                 } else {
                     configCell.detailTextLabel?.text = TapToSetString
                 }
@@ -237,7 +251,7 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                 peripheralState: device?.peripheral.state
             )
 
-            deviceCell.connectSwitch.addTarget(self, action: "deviceConnectionChanged:", forControlEvents: .ValueChanged)
+            deviceCell.connectSwitch.addTarget(self, action: #selector(deviceConnectionChanged(_:)), forControlEvents: .ValueChanged)
 
             cell = deviceCell
         }
@@ -246,6 +260,8 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch Section(rawValue: section)! {
+        case .Loop:
+            return nil
         case .Configuration:
             return NSLocalizedString("Configuration", comment: "The title of the configuration section in settings")
         case .Devices:
@@ -261,7 +277,7 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
             let sender = tableView.cellForRowAtIndexPath(indexPath)
 
             switch ConfigurationRow(rawValue: indexPath.row)! {
-            case .PumpID, .TransmitterID, .InsulinActionDuration:
+            case .PumpID, .TransmitterID, .InsulinActionDuration, .MaxBasal, .MaxBolus:
                 performSegueWithIdentifier(TextFieldTableViewController.className, sender: sender)
             case .BasalRate:
                 let scheduleVC = SingleValueScheduleTableViewController()
@@ -353,7 +369,7 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                     showViewController(scheduleVC, sender: sender)
                 }
             }
-        case .Devices:
+        case .Loop, .Devices:
             break
         }
     }
@@ -362,17 +378,8 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
         switch Section(rawValue: section)! {
         case .Devices:
             return devicesSectionTitleView
-        case .Configuration:
+        case .Loop, .Configuration:
             return nil
-        }
-    }
-
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch Section(rawValue: section)! {
-        case .Configuration:
-            return 55  // Give the top section extra spacing
-        case .Devices:
-            return 37
         }
     }
 
@@ -397,8 +404,21 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                     vc.keyboardType = .DecimalPad
 
                     if let insulinActionDuration = dataManager.insulinActionDuration {
-                        valueNumberFormatter.minimumFractionDigits = 0
                         vc.value = valueNumberFormatter.stringFromNumber(insulinActionDuration.hours)
+                    }
+                case .MaxBasal:
+                    vc.placeholder = NSLocalizedString("Enter a rate in units per hour", comment: "The placeholder text instructing users how to enter a maximum basal rate")
+                    vc.keyboardType = .DecimalPad
+
+                    if let maxBasal = dataManager.maximumBasalRatePerHour {
+                        vc.value = valueNumberFormatter.stringFromNumber(maxBasal)
+                    }
+                case .MaxBolus:
+                    vc.placeholder = NSLocalizedString("Enter a number of units", comment: "The placeholder text instructing users how to enter a maximum bolus")
+                    vc.keyboardType = .DecimalPad
+
+                    if let maxBolus = dataManager.maximumBolus {
+                        vc.value = valueNumberFormatter.stringFromNumber(maxBolus)
                     }
                 default:
                     assertionFailure()
@@ -407,6 +427,9 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                 vc.title = cell.textLabel?.text
                 vc.indexPath = indexPath
                 vc.delegate = self
+            case let vc as RileyLinkDeviceTableViewController:
+                vc.device = dataManager.rileyLinkManager?.devices[indexPath.row]
+                vc.pumpTimeZone = dataManager.pumpTimeZone
             default:
                 break
             }
@@ -415,10 +438,14 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
 
     // MARK: - Device mangement
 
+    func dosingEnabledChanged(sender: UISwitch) {
+        dataManager.loopManager.dosingEnabled = sender.on
+    }
+
     func deviceConnectionChanged(connectSwitch: UISwitch) {
         let switchOrigin = connectSwitch.convertPoint(.zero, toView: tableView)
 
-        if let indexPath = tableView.indexPathForRowAtPoint(switchOrigin) where indexPath.section == 1,
+        if let indexPath = tableView.indexPathForRowAtPoint(switchOrigin) where indexPath.section == Section.Devices.rawValue,
             let deviceManager = dataManager.rileyLinkManager
         {
             let device = deviceManager.devices[indexPath.row]
@@ -446,6 +473,18 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                 } else {
                     dataManager.insulinActionDuration = nil
                 }
+            case .MaxBasal:
+                if let value = controller.value, rate = valueNumberFormatter.numberFromString(value)?.doubleValue {
+                    dataManager.maximumBasalRatePerHour = rate
+                } else {
+                    dataManager.maximumBasalRatePerHour = nil
+                }
+            case .MaxBolus:
+                if let value = controller.value, units = valueNumberFormatter.numberFromString(value)?.doubleValue {
+                    dataManager.maximumBolus = units
+                } else {
+                    dataManager.maximumBolus = nil
+                }
             default:
                 assertionFailure()
             }
@@ -469,9 +508,9 @@ class SettingsTableViewController: UITableViewController, DailyValueScheduleTabl
                     if let controller = controller as? GlucoseRangeScheduleTableViewController {
                         dataManager.glucoseTargetRangeSchedule = GlucoseRangeSchedule(unit: controller.unit, dailyItems: controller.scheduleItems, timeZone: controller.timeZone)
                     }
-                case let section:
+                case let row:
                     if let controller = controller as? DailyQuantityScheduleTableViewController {
-                        switch section {
+                        switch row {
                         case .CarbRatio:
                             dataManager.carbRatioSchedule = CarbRatioSchedule(unit: controller.unit, dailyItems: controller.scheduleItems, timeZone: controller.timeZone)
                         case .InsulinSensitivity:

@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString * const RileyLinkManagerDidDiscoverDeviceNotification;
+extern NSString * const RileyLinkDeviceConnectionStateDidChangeNotification;
 
 extern NSString * const RileyLinkDeviceKey;
 
@@ -24,6 +25,8 @@ NS_ASSUME_NONNULL_END
 @property (copy, nonatomic, nullable, readonly) NSString *pumpID;
 
 @property (nonatomic, nonnull, readonly, strong) NSArray<RileyLinkDevice *>* devices;
+
+@property (nonatomic, nullable, readonly) RileyLinkDevice *firstConnectedDevice;
 
 @property (nonatomic, readwrite) BOOL deviceScanningEnabled;
 

@@ -7,48 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		430B2F841B9C9F97005DCF14 /* MySentryAlertMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B2F831B9C9F97005DCF14 /* MySentryAlertMessageBody.swift */; };
-		430B2F861B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B2F851B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift */; };
-		4326F5051BA5EC8F009204C6 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326F5041BA5EC8F009204C6 /* NSDateComponents.swift */; };
-		4326F5071BA6292F009204C6 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326F5061BA6292F009204C6 /* AlertType.swift */; };
-		432884F21BB515D40028E4EB /* PumpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432884F11BB515D40028E4EB /* PumpDataManager.swift */; };
-		432AC0C71C2A396A00B1DC2F /* CRC8.h in Headers */ = {isa = PBXBuildFile; fileRef = 432AC0C51C2A396A00B1DC2F /* CRC8.h */; };
-		432AC0C81C2A396A00B1DC2F /* CRC8.m in Sources */ = {isa = PBXBuildFile; fileRef = 432AC0C61C2A396A00B1DC2F /* CRC8.m */; };
-		433C8D041C2F42DD00F754CE /* ReadSettingsCarelinkMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433C8D031C2F42DD00F754CE /* ReadSettingsCarelinkMessageBody.swift */; };
-		433C8D061C2F453500F754CE /* CarelinkMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433C8D051C2F453500F754CE /* CarelinkMessageBody.swift */; };
-		434422B11C7C32B700D7EB3E /* TouchAndPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434422B01C7C32B700D7EB3E /* TouchAndPanGestureRecognizer.swift */; };
+		4315D2871CA5CC3B00589052 /* CarbEntryEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315D2861CA5CC3B00589052 /* CarbEntryEditTableViewController.swift */; };
+		4315D28A1CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315D2891CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift */; };
+		4315D28B1CA5F48100589052 /* DiagnosticLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4EF1C1BA2A57600526CE1 /* DiagnosticLogger.swift */; };
+		4315D28D1CA5F55F00589052 /* NSDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315D28C1CA5F55F00589052 /* NSDateFormatter.swift */; };
+		4315D28F1CA5F60000589052 /* DiagnosticLogger+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4315D28E1CA5F60000589052 /* DiagnosticLogger+Error.swift */; };
+		4315D2901CA6332F00589052 /* RemoteSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E344A71B9EAA8300C85C07 /* RemoteSettings.plist */; };
+		4331E0781C85302200FBE832 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331E0771C85302200FBE832 /* CGPoint.swift */; };
+		4331E07A1C85650D00FBE832 /* ChartAxisValueDoubleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4331E0791C85650D00FBE832 /* ChartAxisValueDoubleLog.swift */; };
 		4346D1E71C77F5FE00ABAFE3 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346D1E61C77F5FE00ABAFE3 /* ChartTableViewCell.swift */; };
 		4346D1EB1C77FF0E00ABAFE3 /* predict_glucose_from_dose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4346D1E91C77FF0E00ABAFE3 /* predict_glucose_from_dose.json */; };
 		4346D1EC1C77FF0E00ABAFE3 /* clean_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4346D1EA1C77FF0E00ABAFE3 /* clean_glucose.json */; };
 		4346D1F01C781BEA00ABAFE3 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4346D1EF1C781BEA00ABAFE3 /* SwiftCharts.framework */; };
-		4346D1F21C7833CE00ABAFE3 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346D1F11C7833CE00ABAFE3 /* Chart.swift */; };
 		4346D1F61C78501000ABAFE3 /* ChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346D1F51C78501000ABAFE3 /* ChartPoint.swift */; };
 		4346D1FA1C790F6F00ABAFE3 /* FixtureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346D1F91C790F6F00ABAFE3 /* FixtureData.swift */; };
+		434B2A0C1C97B20F00BC3003 /* LoopKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43F78D4B1C914197002152D1 /* LoopKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		434B2A0D1C97B22D00BC3003 /* InsulinKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43F78D4A1C914197002152D1 /* InsulinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		434B2A0E1C97B24000BC3003 /* InsulinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D4A1C914197002152D1 /* InsulinKit.framework */; };
+		4354002D1C9F66C000D5819C /* BolusInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354002C1C9F66C000D5819C /* BolusInterfaceController.swift */; };
+		4354002F1C9F718600D5819C /* IdentifiableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354002E1C9F718600D5819C /* IdentifiableClass.swift */; };
+		435400311C9F744E00D5819C /* BolusSuggestionUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400301C9F744E00D5819C /* BolusSuggestionUserInfo.swift */; };
+		435400321C9F745500D5819C /* BolusSuggestionUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400301C9F744E00D5819C /* BolusSuggestionUserInfo.swift */; };
+		435400341C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400331C9F878D00D5819C /* SetBolusUserInfo.swift */; };
+		435400351C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400331C9F878D00D5819C /* SetBolusUserInfo.swift */; };
+		435400371C9F970500D5819C /* WKAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400361C9F970500D5819C /* WKAlertAction.swift */; };
+		435400391C9FB7FC00D5819C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435400381C9FB7FC00D5819C /* UIColor.swift */; };
+		4354003A1C9FB81100D5819C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92501C541832001FFDE1 /* UIColor.swift */; };
+		435F355B1C9BCDCC00C204D2 /* ChangeTempBasalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435F35591C9BCDBB00C204D2 /* ChangeTempBasalCommand.swift */; };
 		43649A631C7A347F00523D7F /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43649A621C7A347F00523D7F /* CollectionType.swift */; };
 		43757D181C07DA6D00910CB9 /* CLKComplicationTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757D171C07DA6D00910CB9 /* CLKComplicationTemplate.swift */; };
 		43776F901B8022E90074EA36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43776F8F1B8022E90074EA36 /* AppDelegate.swift */; };
 		43776F971B8022E90074EA36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43776F951B8022E90074EA36 /* Main.storyboard */; };
 		43776F991B8022E90074EA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43776F981B8022E90074EA36 /* Assets.xcassets */; };
 		43776F9C1B8022E90074EA36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43776F9A1B8022E90074EA36 /* LaunchScreen.storyboard */; };
-		437A289F1C2F66DE00009647 /* MinimedKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A289E1C2F66DE00009647 /* MinimedKitTests.swift */; };
-		437A28A11C2F66DE00009647 /* MinimedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438C933A1B97F82000BE20E9 /* MinimedKit.framework */; };
-		437A28A71C2F676C00009647 /* MySentryPumpStatusMessageBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3449C1B9D1B4100C85C07 /* MySentryPumpStatusMessageBodyTests.swift */; };
-		437A28A81C2F676F00009647 /* NSDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D5CE11B9C1879002551A8 /* NSDataTests.swift */; };
-		437A28A91C2F677100009647 /* ReadSettingsCarelinkMessageBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433C8D071C2F5FC200F754CE /* ReadSettingsCarelinkMessageBodyTests.swift */; };
-		437A28AB1C2F6C4500009647 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A28AA1C2F6C4500009647 /* Int.swift */; };
 		437A28B11C2FB65800009647 /* ReadSettingsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A28B01C2FB65800009647 /* ReadSettingsCommand.swift */; };
 		437A28B31C2FC16700009647 /* PowerOnCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A28B21C2FC16700009647 /* PowerOnCommand.swift */; };
-		437A28B51C2FC41700009647 /* PowerOnCarelinkMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437A28B41C2FC41700009647 /* PowerOnCarelinkMessageBody.swift */; };
 		438C5D491C7FFC8D00FCCEC5 /* iob.json in Resources */ = {isa = PBXBuildFile; fileRef = 438C5D481C7FFC8D00FCCEC5 /* iob.json */; };
-		438C933D1B97F82000BE20E9 /* MinimedKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 438C933C1B97F82000BE20E9 /* MinimedKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		438C934F1B97F82000BE20E9 /* MinimedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438C933A1B97F82000BE20E9 /* MinimedKit.framework */; };
-		438C93501B97F82000BE20E9 /* MinimedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 438C933A1B97F82000BE20E9 /* MinimedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		438C93581B97FE5300BE20E9 /* PacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C93571B97FE5300BE20E9 /* PacketType.swift */; };
-		438C935A1B97FEDA00BE20E9 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C93591B97FEDA00BE20E9 /* MessageType.swift */; };
-		438C935C1B9801DC00BE20E9 /* PumpMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C935B1B9801DC00BE20E9 /* PumpMessage.swift */; };
-		438C935E1B980BC000BE20E9 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C935D1B980BC000BE20E9 /* NSData.swift */; };
+		43971A2D1C8B94010013154F /* CommandResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A2C1C8B94010013154F /* CommandResponseViewController.swift */; };
+		43971A361C8BC1150013154F /* BolusCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A341C8BBC520013154F /* BolusCommand.swift */; };
+		43971A381C8BC5A00013154F /* RileyLinkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A371C8BC5A00013154F /* RileyLinkDevice.swift */; };
+		43971A3C1C8BC9750013154F /* TwoStepCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A3B1C8BC9750013154F /* TwoStepCommand.swift */; };
+		43971A501C8E6B580013154F /* ReadTempBasalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A4F1C8E6B580013154F /* ReadTempBasalCommand.swift */; };
 		439A30B71C540CF600059771 /* AddCarbsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A30B61C540CF600059771 /* AddCarbsInterfaceController.swift */; };
-		439FC9EC1C321C67007DE84C /* RileyLinkDevice_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 439FC9EB1C321C67007DE84C /* RileyLinkDevice_Private.h */; };
+		43A567691C94880B00334FAC /* LoopDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A567681C94880B00334FAC /* LoopDataManager.swift */; };
+		43A5676B1C96155700334FAC /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */; };
 		43A943761B926B7B0051FA24 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A943741B926B7B0051FA24 /* Interface.storyboard */; };
 		43A943781B926B7B0051FA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A943771B926B7B0051FA24 /* Assets.xcassets */; };
 		43A9437F1B926B7B0051FA24 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43A9437E1B926B7B0051FA24 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -59,75 +61,107 @@
 		43A9438E1B926B7B0051FA24 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9438D1B926B7B0051FA24 /* ComplicationController.swift */; };
 		43A943901B926B7B0051FA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A9438F1B926B7B0051FA24 /* Assets.xcassets */; };
 		43A943941B926B7B0051FA24 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 43A943721B926B7B0051FA24 /* WatchApp.app */; };
-		43A943A51B928D400051FA24 /* RileyLinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943A41B928D400051FA24 /* RileyLinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43A943A91B928D400051FA24 /* RileyLinkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A943A21B928D400051FA24 /* RileyLinkKit.framework */; };
 		43A943AA1B928D400051FA24 /* RileyLinkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A943A21B928D400051FA24 /* RileyLinkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		43A943B71B9298BF0051FA24 /* MinimedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943AF1B9298BF0051FA24 /* MinimedPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43A943B81B9298BF0051FA24 /* MinimedPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A943B01B9298BF0051FA24 /* MinimedPacket.m */; };
-		43A943B91B9298BF0051FA24 /* RileyLinkBLEDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943B11B9298BF0051FA24 /* RileyLinkBLEDevice.h */; };
-		43A943BA1B9298BF0051FA24 /* RileyLinkBLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A943B21B9298BF0051FA24 /* RileyLinkBLEDevice.m */; };
-		43A943BB1B9298BF0051FA24 /* RileyLinkBLEManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943B31B9298BF0051FA24 /* RileyLinkBLEManager.h */; };
-		43A943BC1B9298BF0051FA24 /* RileyLinkBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A943B41B9298BF0051FA24 /* RileyLinkBLEManager.m */; };
-		43A943BD1B9298BF0051FA24 /* SendDataTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943B51B9298BF0051FA24 /* SendDataTask.h */; };
-		43A943BE1B9298BF0051FA24 /* SendDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A943B61B9298BF0051FA24 /* SendDataTask.m */; };
-		43A943C11B92996B0051FA24 /* NSData+Conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 43A943BF1B92996B0051FA24 /* NSData+Conversion.h */; };
-		43A943C21B92996B0051FA24 /* NSData+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A943C01B92996B0051FA24 /* NSData+Conversion.m */; };
-		43DE92511C541832001FFDE1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92501C541832001FFDE1 /* UIColor.swift */; };
-		43DE92531C541D36001FFDE1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92501C541832001FFDE1 /* UIColor.swift */; };
+		43C094481CAB9A21001F6403 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C094471CAB9A21001F6403 /* NSUserDefaults.swift */; };
+		43C0944A1CACCC73001F6403 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C094491CACCC73001F6403 /* NotificationManager.swift */; };
+		43CA93371CB98079000026B5 /* MinimedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA93361CB98079000026B5 /* MinimedKit.framework */; };
+		43CE7CDE1CA8B63E003CC1B0 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CE7CDD1CA8B63E003CC1B0 /* NSDate.swift */; };
+		43DBF04C1C93B8D700B3C386 /* BolusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF04B1C93B8D700B3C386 /* BolusViewController.swift */; };
+		43DBF0511C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF0501C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift */; };
+		43DBF0531C93EC8200B3C386 /* DeviceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF0521C93EC8200B3C386 /* DeviceDataManager.swift */; };
+		43DBF0551C93ED3000B3C386 /* DeviceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF0541C93ED3000B3C386 /* DeviceDataManager.swift */; };
+		43DBF0571C93F6EB00B3C386 /* ReservoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF0561C93F6EB00B3C386 /* ReservoirTableViewController.swift */; };
+		43DBF0591C93F73800B3C386 /* CarbEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBF0581C93F73800B3C386 /* CarbEntryTableViewController.swift */; };
+		43DC87C61C8B68A9005BC30D /* PumpStatusMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87C41C8B68A9005BC30D /* PumpStatusMessage.h */; };
+		43DC87C71C8B68A9005BC30D /* PumpStatusMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87C51C8B68A9005BC30D /* PumpStatusMessage.m */; };
+		43DC87CA1C8B6903005BC30D /* DeviceLinkMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87C81C8B6903005BC30D /* DeviceLinkMessage.h */; };
+		43DC87CB1C8B6903005BC30D /* DeviceLinkMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87C91C8B6903005BC30D /* DeviceLinkMessage.m */; };
+		43DC87CE1C8B6917005BC30D /* FindDeviceMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87CC1C8B6917005BC30D /* FindDeviceMessage.h */; };
+		43DC87CF1C8B6917005BC30D /* FindDeviceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87CD1C8B6917005BC30D /* FindDeviceMessage.m */; };
+		43DC87D21C8B6920005BC30D /* MeterMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87D01C8B6920005BC30D /* MeterMessage.h */; };
+		43DC87D31C8B6920005BC30D /* MeterMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87D11C8B6920005BC30D /* MeterMessage.m */; };
+		43DC87D61C8B7090005BC30D /* PumpState.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87D41C8B7090005BC30D /* PumpState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43DC87D71C8B7090005BC30D /* PumpState.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87D51C8B7090005BC30D /* PumpState.m */; };
+		43DC87DC1C8B70DF005BC30D /* PumpOps.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87D81C8B70DF005BC30D /* PumpOps.h */; };
+		43DC87DD1C8B70DF005BC30D /* PumpOps.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87D91C8B70DF005BC30D /* PumpOps.m */; };
+		43DC87DE1C8B70DF005BC30D /* PumpOpsSynchronous.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87DA1C8B70DF005BC30D /* PumpOpsSynchronous.h */; };
+		43DC87DF1C8B70DF005BC30D /* PumpOpsSynchronous.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87DB1C8B70DF005BC30D /* PumpOpsSynchronous.m */; };
+		43DC87E21C8B7252005BC30D /* SendPacketCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87E01C8B7252005BC30D /* SendPacketCmd.h */; };
+		43DC87E31C8B7252005BC30D /* SendPacketCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87E11C8B7252005BC30D /* SendPacketCmd.m */; };
+		43DC87E61C8B726A005BC30D /* UpdateRegisterCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DC87E41C8B726A005BC30D /* UpdateRegisterCmd.h */; };
+		43DC87E71C8B726A005BC30D /* UpdateRegisterCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87E51C8B726A005BC30D /* UpdateRegisterCmd.m */; };
+		43DC87E91C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87E81C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift */; };
+		43DC87EB1C8B82BE005BC30D /* CBPeripheralState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC87EA1C8B82BE005BC30D /* CBPeripheralState.swift */; };
 		43DE92591C5479E4001FFDE1 /* CarbEntryUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92581C5479E4001FFDE1 /* CarbEntryUserInfo.swift */; };
 		43DE925A1C5479E4001FFDE1 /* CarbEntryUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92581C5479E4001FFDE1 /* CarbEntryUserInfo.swift */; };
 		43DE925C1C547A20001FFDE1 /* WatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE925B1C547A20001FFDE1 /* WatchContext.swift */; };
 		43DE925D1C547A20001FFDE1 /* WatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE925B1C547A20001FFDE1 /* WatchContext.swift */; };
 		43DE92611C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE92601C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift */; };
-		43E0DDF91B9A98CA007B4443 /* MessageSendOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 43E0DDF71B9A98CA007B4443 /* MessageSendOperation.h */; };
-		43E0DDFA1B9A98CA007B4443 /* MessageSendOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DDF81B9A98CA007B4443 /* MessageSendOperation.m */; };
-		43E0DDFD1B9A997B007B4443 /* MessageBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43E0DDFB1B9A997B007B4443 /* MessageBase.h */; };
-		43E0DDFE1B9A997B007B4443 /* MessageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DDFC1B9A997B007B4443 /* MessageBase.m */; };
-		43E0DE021B9AA0D5007B4443 /* MySentryAckMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DE011B9AA0D5007B4443 /* MySentryAckMessageBody.swift */; };
-		43E0DE041B9AB6F6007B4443 /* MessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DE031B9AB6F6007B4443 /* MessageBody.swift */; };
-		43E0DE071B9B51EE007B4443 /* MySentryPumpStatusMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DE061B9B51EE007B4443 /* MySentryPumpStatusMessageBody.swift */; };
 		43E3449F1B9D68E900C85C07 /* StatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3449E1B9D68E900C85C07 /* StatusTableViewController.swift */; };
 		43E344A41B9E1B1C00C85C07 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E344A31B9E1B1C00C85C07 /* NSUserDefaults.swift */; };
 		43E344A61B9E1B3300C85C07 /* NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E344A51B9E1B3300C85C07 /* NSBundle.swift */; };
 		43E344A81B9EAA8400C85C07 /* RemoteSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E344A71B9EAA8300C85C07 /* RemoteSettings.plist */; };
+		43EB40861C82646A00472A8C /* StatusChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40851C82646A00472A8C /* StatusChartManager.swift */; };
+		43EB408F1C82843100472A8C /* RileyLinkBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40871C82843100472A8C /* RileyLinkBLEManager.m */; };
+		43EB40901C82843100472A8C /* RileyLinkBLEManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40881C82843100472A8C /* RileyLinkBLEManager.h */; };
+		43EB40911C82843100472A8C /* RileyLinkBLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40891C82843100472A8C /* RileyLinkBLEDevice.m */; };
+		43EB40921C82843100472A8C /* RileyLinkBLEDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB408A1C82843100472A8C /* RileyLinkBLEDevice.h */; };
+		43EB40931C82843100472A8C /* CRC8.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB408B1C82843100472A8C /* CRC8.m */; };
+		43EB40941C82843100472A8C /* CRC8.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB408C1C82843100472A8C /* CRC8.h */; };
+		43EB40951C82843100472A8C /* CmdBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB408D1C82843100472A8C /* CmdBase.m */; };
+		43EB40961C82843100472A8C /* CmdBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB408E1C82843100472A8C /* CmdBase.h */; };
+		43EB40991C8285B700472A8C /* MinimedPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40971C8285B700472A8C /* MinimedPacket.m */; };
+		43EB409A1C8285B700472A8C /* MinimedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40981C8285B700472A8C /* MinimedPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EB409D1C8285D600472A8C /* NSData+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB409B1C8285D600472A8C /* NSData+Conversion.m */; };
+		43EB409E1C8285D600472A8C /* NSData+Conversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB409C1C8285D600472A8C /* NSData+Conversion.h */; };
+		43EB40A11C82864200472A8C /* SendAndListenCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB409F1C82864200472A8C /* SendAndListenCmd.m */; };
+		43EB40A21C82864200472A8C /* SendAndListenCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40A01C82864200472A8C /* SendAndListenCmd.h */; };
+		43EB40A91C8286E900472A8C /* GetVersionCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40A51C8286E900472A8C /* GetVersionCmd.m */; };
+		43EB40AA1C8286E900472A8C /* GetVersionCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40A61C8286E900472A8C /* GetVersionCmd.h */; };
+		43EB40AB1C8286E900472A8C /* GetPacketCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40A71C8286E900472A8C /* GetPacketCmd.m */; };
+		43EB40AC1C8286E900472A8C /* GetPacketCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40A81C8286E900472A8C /* GetPacketCmd.h */; };
+		43EB40AE1C8287B200472A8C /* RileyLinkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40AD1C8287B200472A8C /* RileyLinkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EB40B41C828ACB00472A8C /* RileyLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40AF1C828ACB00472A8C /* RileyLinkManager.m */; };
+		43EB40B51C828ACB00472A8C /* RileyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40B01C828ACB00472A8C /* RileyLinkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EB40B61C828ACB00472A8C /* RileyLinkDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40B11C828ACB00472A8C /* RileyLinkDevice.m */; };
+		43EB40B71C828ACB00472A8C /* RileyLinkDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40B21C828ACB00472A8C /* RileyLinkDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43EB40B81C828ACB00472A8C /* RileyLinkDevice_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40B31C828ACB00472A8C /* RileyLinkDevice_Private.h */; };
+		43EB40BB1C828AFF00472A8C /* MessageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40B91C828AFF00472A8C /* MessageBase.m */; };
+		43EB40BC1C828AFF00472A8C /* MessageBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EB40BA1C828AFF00472A8C /* MessageBase.h */; };
+		43EB40BE1C839DC400472A8C /* normalize_history.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EB40BD1C839DC400472A8C /* normalize_history.json */; };
+		43EB40C01C839DFB00472A8C /* predict_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EB40BF1C839DFB00472A8C /* predict_glucose.json */; };
+		43EB40C21C83F84900472A8C /* StatusChartHighlightLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB40C11C83F84900472A8C /* StatusChartHighlightLayer.swift */; };
 		43EDDBF21C361C75007D89B5 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EDDBF01C361C75007D89B5 /* CommonCrypto.framework */; };
 		43EDDBF31C361C75007D89B5 /* xDripG5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EDDBF11C361C75007D89B5 /* xDripG5.framework */; };
-		43F2756C1BAA7BA9006A5B6A /* UnknownMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2756B1BAA7BA9006A5B6A /* UnknownMessageBody.swift */; };
 		43F4EF1D1BA2A57600526CE1 /* DiagnosticLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4EF1C1BA2A57600526CE1 /* DiagnosticLogger.swift */; };
 		43F5C2C91B929C09003EB13D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F5C2C81B929C09003EB13D /* HealthKit.framework */; };
 		43F5C2D91B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2D81B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift */; };
 		43F5C2DB1B92A5E1003EB13D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2DA1B92A5E1003EB13D /* SettingsTableViewController.swift */; };
-		43F5C2E01B937615003EB13D /* RileyLinkDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F5C2DC1B937615003EB13D /* RileyLinkDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43F5C2E11B937615003EB13D /* RileyLinkDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2DD1B937615003EB13D /* RileyLinkDevice.m */; };
-		43F5C2E21B937615003EB13D /* RileyLinkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F5C2DE1B937615003EB13D /* RileyLinkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43F5C2E31B937615003EB13D /* RileyLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2DF1B937615003EB13D /* RileyLinkManager.m */; };
-		43F5C2E61B93C685003EB13D /* PumpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2E51B93C685003EB13D /* PumpDataManager.swift */; };
 		43F5C2E81B93DE9A003EB13D /* TextFieldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5C2E71B93DE9A003EB13D /* TextFieldTableViewController.swift */; };
-		43FF3D5E1BADE38300DE240A /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326F5061BA6292F009204C6 /* AlertType.swift */; };
-		43FF3D5F1BADE38800DE240A /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C935D1B980BC000BE20E9 /* NSData.swift */; };
-		43FF3D601BADE38800DE240A /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326F5041BA5EC8F009204C6 /* NSDateComponents.swift */; };
-		43FF3D611BADE38C00DE240A /* MessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0DE031B9AB6F6007B4443 /* MessageBody.swift */; };
-		43FF3D631BADE39000DE240A /* MySentryAlertClearedMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B2F851B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift */; };
-		43FF3D641BADE39000DE240A /* MySentryAlertMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B2F831B9C9F97005DCF14 /* MySentryAlertMessageBody.swift */; };
-		43FF3D661BADE39000DE240A /* UnknownMessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2756B1BAA7BA9006A5B6A /* UnknownMessageBody.swift */; };
-		43FF3D681BADE39400DE240A /* PacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C93571B97FE5300BE20E9 /* PacketType.swift */; };
+		43F78D261C8FC000002152D1 /* DoseMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F78D251C8FC000002152D1 /* DoseMath.swift */; };
+		43F78D2E1C8FC58F002152D1 /* DoseMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F78D2D1C8FC58F002152D1 /* DoseMathTests.swift */; };
+		43F78D391C8FCC7B002152D1 /* read_selected_basal_profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D381C8FCC7B002152D1 /* read_selected_basal_profile.json */; };
+		43F78D3F1C911D2F002152D1 /* NateradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F78D3E1C911D2F002152D1 /* NateradeTests.swift */; };
+		43F78D411C911F70002152D1 /* recommend_temp_basal_no_change_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D401C911F70002152D1 /* recommend_temp_basal_no_change_glucose.json */; };
+		43F78D431C9131E0002152D1 /* recommend_temp_basal_start_high_end_in_range.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D421C9131E0002152D1 /* recommend_temp_basal_start_high_end_in_range.json */; };
+		43F78D451C9133D7002152D1 /* recommend_temp_basal_start_low_end_in_range.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D441C9133D7002152D1 /* recommend_temp_basal_start_low_end_in_range.json */; };
+		43F78D471C913CF8002152D1 /* recommend_temp_basal_correct_low_at_min.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D461C913CF8002152D1 /* recommend_temp_basal_correct_low_at_min.json */; };
+		43F78D4C1C914197002152D1 /* CarbKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D481C914197002152D1 /* CarbKit.framework */; };
+		43F78D4D1C914197002152D1 /* GlucoseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D491C914197002152D1 /* GlucoseKit.framework */; };
+		43F78D4E1C914197002152D1 /* InsulinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D4A1C914197002152D1 /* InsulinKit.framework */; };
+		43F78D4F1C914197002152D1 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D4B1C914197002152D1 /* LoopKit.framework */; };
+		43F78D501C9141D3002152D1 /* LoopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F78D4B1C914197002152D1 /* LoopKit.framework */; };
+		43F78D511C914444002152D1 /* DoseMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F78D251C8FC000002152D1 /* DoseMath.swift */; };
+		43F78D531C914AE4002152D1 /* recommend_temp_basal_start_high_end_low.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D521C914AE4002152D1 /* recommend_temp_basal_start_high_end_low.json */; };
+		43F78D551C914B19002152D1 /* recommend_temp_basal_start_low_end_high.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D541C914B19002152D1 /* recommend_temp_basal_start_low_end_high.json */; };
+		43F78D571C914BD1002152D1 /* recommend_temp_basal_flat_and_high.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D561C914BD1002152D1 /* recommend_temp_basal_flat_and_high.json */; };
+		43F78D591C914C57002152D1 /* recommend_temp_basal_high_and_falling.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D581C914C57002152D1 /* recommend_temp_basal_high_and_falling.json */; };
+		43F78D5B1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D5A1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json */; };
+		43F78D5D1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D5C1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		437A28A21C2F66DE00009647 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 43776F841B8022E90074EA36 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 438C93391B97F82000BE20E9;
-			remoteInfo = MinimedKit;
-		};
-		438C934D1B97F82000BE20E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 43776F841B8022E90074EA36 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 438C93391B97F82000BE20E9;
-			remoteInfo = MinimedKit;
-		};
 		43A943801B926B7B0051FA24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43776F841B8022E90074EA36 /* Project object */;
@@ -152,6 +186,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		434B2A0B1C97B1F600BC3003 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				434B2A0D1C97B22D00BC3003 /* InsulinKit.framework in CopyFiles */,
+				434B2A0C1C97B20F00BC3003 /* LoopKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43A943981B926B7B0051FA24 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,7 +226,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				43A943AA1B928D400051FA24 /* RileyLinkKit.framework in Embed Frameworks */,
-				438C93501B97F82000BE20E9 /* MinimedKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,25 +243,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		430B2F831B9C9F97005DCF14 /* MySentryAlertMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySentryAlertMessageBody.swift; sourceTree = "<group>"; };
-		430B2F851B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySentryAlertClearedMessageBody.swift; sourceTree = "<group>"; };
-		430D5CE11B9C1879002551A8 /* NSDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataTests.swift; sourceTree = "<group>"; };
-		4326F5041BA5EC8F009204C6 /* NSDateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComponents.swift; sourceTree = "<group>"; };
-		4326F5061BA6292F009204C6 /* AlertType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
-		432884F11BB515D40028E4EB /* PumpDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpDataManager.swift; sourceTree = "<group>"; };
-		432AC0C51C2A396A00B1DC2F /* CRC8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRC8.h; sourceTree = "<group>"; };
-		432AC0C61C2A396A00B1DC2F /* CRC8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRC8.m; sourceTree = "<group>"; };
-		433C8D031C2F42DD00F754CE /* ReadSettingsCarelinkMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadSettingsCarelinkMessageBody.swift; sourceTree = "<group>"; };
-		433C8D051C2F453500F754CE /* CarelinkMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarelinkMessageBody.swift; sourceTree = "<group>"; };
-		433C8D071C2F5FC200F754CE /* ReadSettingsCarelinkMessageBodyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadSettingsCarelinkMessageBodyTests.swift; sourceTree = "<group>"; };
-		434422B01C7C32B700D7EB3E /* TouchAndPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchAndPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		4315D2861CA5CC3B00589052 /* CarbEntryEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarbEntryEditTableViewController.swift; sourceTree = "<group>"; };
+		4315D2891CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DiagnosticLogger+LoopKit.swift"; sourceTree = "<group>"; };
+		4315D28C1CA5F55F00589052 /* NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatter.swift; sourceTree = "<group>"; };
+		4315D28E1CA5F60000589052 /* DiagnosticLogger+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DiagnosticLogger+Error.swift"; sourceTree = "<group>"; };
+		4331E0771C85302200FBE832 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		4331E0791C85650D00FBE832 /* ChartAxisValueDoubleLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartAxisValueDoubleLog.swift; sourceTree = "<group>"; };
 		4346D1E61C77F5FE00ABAFE3 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		4346D1E91C77FF0E00ABAFE3 /* predict_glucose_from_dose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predict_glucose_from_dose.json; sourceTree = "<group>"; };
 		4346D1EA1C77FF0E00ABAFE3 /* clean_glucose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clean_glucose.json; sourceTree = "<group>"; };
 		4346D1EF1C781BEA00ABAFE3 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
-		4346D1F11C7833CE00ABAFE3 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		4346D1F51C78501000ABAFE3 /* ChartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartPoint.swift; sourceTree = "<group>"; };
 		4346D1F91C790F6F00ABAFE3 /* FixtureData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureData.swift; sourceTree = "<group>"; };
+		4354002C1C9F66C000D5819C /* BolusInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BolusInterfaceController.swift; sourceTree = "<group>"; };
+		4354002E1C9F718600D5819C /* IdentifiableClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableClass.swift; sourceTree = "<group>"; };
+		435400301C9F744E00D5819C /* BolusSuggestionUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BolusSuggestionUserInfo.swift; sourceTree = "<group>"; };
+		435400331C9F878D00D5819C /* SetBolusUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBolusUserInfo.swift; sourceTree = "<group>"; };
+		435400361C9F970500D5819C /* WKAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKAlertAction.swift; sourceTree = "<group>"; };
+		435400381C9FB7FC00D5819C /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		435F35591C9BCDBB00C204D2 /* ChangeTempBasalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTempBasalCommand.swift; sourceTree = "<group>"; };
 		43649A621C7A347F00523D7F /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		43757D171C07DA6D00910CB9 /* CLKComplicationTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLKComplicationTemplate.swift; sourceTree = "<group>"; };
 		43776F8C1B8022E90074EA36 /* Naterade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naterade.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,23 +269,17 @@
 		43776F961B8022E90074EA36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43776F981B8022E90074EA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43776F9B1B8022E90074EA36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		437A289C1C2F66DD00009647 /* MinimedKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimedKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		437A289E1C2F66DE00009647 /* MinimedKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimedKitTests.swift; sourceTree = "<group>"; };
-		437A28A01C2F66DE00009647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		437A28AA1C2F6C4500009647 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		437A28B01C2FB65800009647 /* ReadSettingsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadSettingsCommand.swift; sourceTree = "<group>"; };
 		437A28B21C2FC16700009647 /* PowerOnCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerOnCommand.swift; sourceTree = "<group>"; };
-		437A28B41C2FC41700009647 /* PowerOnCarelinkMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerOnCarelinkMessageBody.swift; sourceTree = "<group>"; };
 		438C5D481C7FFC8D00FCCEC5 /* iob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iob.json; sourceTree = "<group>"; };
-		438C933A1B97F82000BE20E9 /* MinimedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MinimedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		438C933C1B97F82000BE20E9 /* MinimedKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinimedKit.h; sourceTree = "<group>"; };
-		438C933E1B97F82000BE20E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		438C93571B97FE5300BE20E9 /* PacketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketType.swift; sourceTree = "<group>"; };
-		438C93591B97FEDA00BE20E9 /* MessageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
-		438C935B1B9801DC00BE20E9 /* PumpMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpMessage.swift; sourceTree = "<group>"; };
-		438C935D1B980BC000BE20E9 /* NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
+		43971A2C1C8B94010013154F /* CommandResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResponseViewController.swift; sourceTree = "<group>"; };
+		43971A341C8BBC520013154F /* BolusCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BolusCommand.swift; sourceTree = "<group>"; };
+		43971A371C8BC5A00013154F /* RileyLinkDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RileyLinkDevice.swift; sourceTree = "<group>"; };
+		43971A3B1C8BC9750013154F /* TwoStepCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoStepCommand.swift; sourceTree = "<group>"; };
+		43971A4F1C8E6B580013154F /* ReadTempBasalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTempBasalCommand.swift; sourceTree = "<group>"; };
 		439A30B61C540CF600059771 /* AddCarbsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarbsInterfaceController.swift; sourceTree = "<group>"; };
-		439FC9EB1C321C67007DE84C /* RileyLinkDevice_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkDevice_Private.h; sourceTree = "<group>"; };
+		43A567681C94880B00334FAC /* LoopDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopDataManager.swift; sourceTree = "<group>"; };
+		43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		43A943721B926B7B0051FA24 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A943751B926B7B0051FA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		43A943771B926B7B0051FA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,40 +293,80 @@
 		43A9438F1B926B7B0051FA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A943911B926B7B0051FA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A943A21B928D400051FA24 /* RileyLinkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RileyLinkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43A943A41B928D400051FA24 /* RileyLinkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RileyLinkKit.h; sourceTree = "<group>"; };
-		43A943A61B928D400051FA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43A943AF1B9298BF0051FA24 /* MinimedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinimedPacket.h; sourceTree = "<group>"; };
-		43A943B01B9298BF0051FA24 /* MinimedPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinimedPacket.m; sourceTree = "<group>"; };
-		43A943B11B9298BF0051FA24 /* RileyLinkBLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkBLEDevice.h; sourceTree = "<group>"; };
-		43A943B21B9298BF0051FA24 /* RileyLinkBLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkBLEDevice.m; sourceTree = "<group>"; };
-		43A943B31B9298BF0051FA24 /* RileyLinkBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkBLEManager.h; sourceTree = "<group>"; };
-		43A943B41B9298BF0051FA24 /* RileyLinkBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkBLEManager.m; sourceTree = "<group>"; };
-		43A943B51B9298BF0051FA24 /* SendDataTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendDataTask.h; sourceTree = "<group>"; };
-		43A943B61B9298BF0051FA24 /* SendDataTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendDataTask.m; sourceTree = "<group>"; };
-		43A943BF1B92996B0051FA24 /* NSData+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Conversion.h"; sourceTree = "<group>"; };
-		43A943C01B92996B0051FA24 /* NSData+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Conversion.m"; sourceTree = "<group>"; };
+		43C094471CAB9A21001F6403 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
+		43C094491CACCC73001F6403 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		43CA93361CB98079000026B5 /* MinimedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MinimedKit.framework; path = Carthage/Build/iOS/MinimedKit.framework; sourceTree = "<group>"; };
+		43CE7CDD1CA8B63E003CC1B0 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		43DBF04B1C93B8D700B3C386 /* BolusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BolusViewController.swift; sourceTree = "<group>"; };
+		43DBF0501C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverInNavigationControllerSegue.swift; sourceTree = "<group>"; };
+		43DBF0521C93EC8200B3C386 /* DeviceDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataManager.swift; sourceTree = "<group>"; };
+		43DBF0541C93ED3000B3C386 /* DeviceDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataManager.swift; sourceTree = "<group>"; };
+		43DBF0561C93F6EB00B3C386 /* ReservoirTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservoirTableViewController.swift; sourceTree = "<group>"; };
+		43DBF0581C93F73800B3C386 /* CarbEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarbEntryTableViewController.swift; sourceTree = "<group>"; };
+		43DC87C41C8B68A9005BC30D /* PumpStatusMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpStatusMessage.h; sourceTree = "<group>"; };
+		43DC87C51C8B68A9005BC30D /* PumpStatusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpStatusMessage.m; sourceTree = "<group>"; };
+		43DC87C81C8B6903005BC30D /* DeviceLinkMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceLinkMessage.h; sourceTree = "<group>"; };
+		43DC87C91C8B6903005BC30D /* DeviceLinkMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceLinkMessage.m; sourceTree = "<group>"; };
+		43DC87CC1C8B6917005BC30D /* FindDeviceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDeviceMessage.h; sourceTree = "<group>"; };
+		43DC87CD1C8B6917005BC30D /* FindDeviceMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDeviceMessage.m; sourceTree = "<group>"; };
+		43DC87D01C8B6920005BC30D /* MeterMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterMessage.h; sourceTree = "<group>"; };
+		43DC87D11C8B6920005BC30D /* MeterMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeterMessage.m; sourceTree = "<group>"; };
+		43DC87D41C8B7090005BC30D /* PumpState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpState.h; sourceTree = "<group>"; };
+		43DC87D51C8B7090005BC30D /* PumpState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpState.m; sourceTree = "<group>"; };
+		43DC87D81C8B70DF005BC30D /* PumpOps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpOps.h; sourceTree = "<group>"; };
+		43DC87D91C8B70DF005BC30D /* PumpOps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpOps.m; sourceTree = "<group>"; };
+		43DC87DA1C8B70DF005BC30D /* PumpOpsSynchronous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PumpOpsSynchronous.h; sourceTree = "<group>"; };
+		43DC87DB1C8B70DF005BC30D /* PumpOpsSynchronous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PumpOpsSynchronous.m; sourceTree = "<group>"; };
+		43DC87E01C8B7252005BC30D /* SendPacketCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPacketCmd.h; sourceTree = "<group>"; };
+		43DC87E11C8B7252005BC30D /* SendPacketCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendPacketCmd.m; sourceTree = "<group>"; };
+		43DC87E41C8B726A005BC30D /* UpdateRegisterCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateRegisterCmd.h; sourceTree = "<group>"; };
+		43DC87E51C8B726A005BC30D /* UpdateRegisterCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateRegisterCmd.m; sourceTree = "<group>"; };
+		43DC87E81C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RileyLinkDeviceTableViewController.swift; sourceTree = "<group>"; };
+		43DC87EA1C8B82BE005BC30D /* CBPeripheralState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralState.swift; sourceTree = "<group>"; };
 		43DE92501C541832001FFDE1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		43DE92581C5479E4001FFDE1 /* CarbEntryUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarbEntryUserInfo.swift; sourceTree = "<group>"; };
 		43DE925B1C547A20001FFDE1 /* WatchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchContext.swift; sourceTree = "<group>"; };
 		43DE92601C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbsorptionTimeType+CarbKit.swift"; sourceTree = "<group>"; };
-		43E0DDF71B9A98CA007B4443 /* MessageSendOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSendOperation.h; sourceTree = "<group>"; };
-		43E0DDF81B9A98CA007B4443 /* MessageSendOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSendOperation.m; sourceTree = "<group>"; };
-		43E0DDFB1B9A997B007B4443 /* MessageBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBase.h; sourceTree = "<group>"; };
-		43E0DDFC1B9A997B007B4443 /* MessageBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBase.m; sourceTree = "<group>"; };
-		43E0DE011B9AA0D5007B4443 /* MySentryAckMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySentryAckMessageBody.swift; sourceTree = "<group>"; };
-		43E0DE031B9AB6F6007B4443 /* MessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBody.swift; sourceTree = "<group>"; };
-		43E0DE061B9B51EE007B4443 /* MySentryPumpStatusMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySentryPumpStatusMessageBody.swift; sourceTree = "<group>"; };
 		43E3449B1B9CB08800C85C07 /* Naterade.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Naterade.playground; sourceTree = "<group>"; };
-		43E3449C1B9D1B4100C85C07 /* MySentryPumpStatusMessageBodyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySentryPumpStatusMessageBodyTests.swift; sourceTree = "<group>"; };
 		43E3449E1B9D68E900C85C07 /* StatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewController.swift; sourceTree = "<group>"; };
 		43E344A31B9E1B1C00C85C07 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
 		43E344A51B9E1B3300C85C07 /* NSBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundle.swift; sourceTree = "<group>"; };
 		43E344A71B9EAA8300C85C07 /* RemoteSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemoteSettings.plist; sourceTree = "<group>"; };
+		43EB40851C82646A00472A8C /* StatusChartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusChartManager.swift; sourceTree = "<group>"; };
+		43EB40871C82843100472A8C /* RileyLinkBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkBLEManager.m; sourceTree = "<group>"; };
+		43EB40881C82843100472A8C /* RileyLinkBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkBLEManager.h; sourceTree = "<group>"; };
+		43EB40891C82843100472A8C /* RileyLinkBLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkBLEDevice.m; sourceTree = "<group>"; };
+		43EB408A1C82843100472A8C /* RileyLinkBLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkBLEDevice.h; sourceTree = "<group>"; };
+		43EB408B1C82843100472A8C /* CRC8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRC8.m; sourceTree = "<group>"; };
+		43EB408C1C82843100472A8C /* CRC8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRC8.h; sourceTree = "<group>"; };
+		43EB408D1C82843100472A8C /* CmdBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmdBase.m; sourceTree = "<group>"; };
+		43EB408E1C82843100472A8C /* CmdBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdBase.h; sourceTree = "<group>"; };
+		43EB40971C8285B700472A8C /* MinimedPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinimedPacket.m; sourceTree = "<group>"; };
+		43EB40981C8285B700472A8C /* MinimedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinimedPacket.h; sourceTree = "<group>"; };
+		43EB409B1C8285D600472A8C /* NSData+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Conversion.m"; sourceTree = "<group>"; };
+		43EB409C1C8285D600472A8C /* NSData+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Conversion.h"; sourceTree = "<group>"; };
+		43EB409F1C82864200472A8C /* SendAndListenCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendAndListenCmd.m; sourceTree = "<group>"; };
+		43EB40A01C82864200472A8C /* SendAndListenCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendAndListenCmd.h; sourceTree = "<group>"; };
+		43EB40A31C82865200472A8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43EB40A51C8286E900472A8C /* GetVersionCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetVersionCmd.m; sourceTree = "<group>"; };
+		43EB40A61C8286E900472A8C /* GetVersionCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetVersionCmd.h; sourceTree = "<group>"; };
+		43EB40A71C8286E900472A8C /* GetPacketCmd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPacketCmd.m; sourceTree = "<group>"; };
+		43EB40A81C8286E900472A8C /* GetPacketCmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPacketCmd.h; sourceTree = "<group>"; };
+		43EB40AD1C8287B200472A8C /* RileyLinkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkKit.h; sourceTree = "<group>"; };
+		43EB40AF1C828ACB00472A8C /* RileyLinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkManager.m; sourceTree = "<group>"; };
+		43EB40B01C828ACB00472A8C /* RileyLinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkManager.h; sourceTree = "<group>"; };
+		43EB40B11C828ACB00472A8C /* RileyLinkDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkDevice.m; sourceTree = "<group>"; };
+		43EB40B21C828ACB00472A8C /* RileyLinkDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkDevice.h; sourceTree = "<group>"; };
+		43EB40B31C828ACB00472A8C /* RileyLinkDevice_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkDevice_Private.h; sourceTree = "<group>"; };
+		43EB40B91C828AFF00472A8C /* MessageBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBase.m; sourceTree = "<group>"; };
+		43EB40BA1C828AFF00472A8C /* MessageBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBase.h; sourceTree = "<group>"; };
+		43EB40BD1C839DC400472A8C /* normalize_history.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = normalize_history.json; sourceTree = "<group>"; };
+		43EB40BF1C839DFB00472A8C /* predict_glucose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = predict_glucose.json; sourceTree = "<group>"; };
+		43EB40C11C83F84900472A8C /* StatusChartHighlightLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusChartHighlightLayer.swift; sourceTree = "<group>"; };
 		43EDDBF01C361C75007D89B5 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 		43EDDBF11C361C75007D89B5 /* xDripG5.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = xDripG5.framework; path = Carthage/Build/iOS/xDripG5.framework; sourceTree = "<group>"; };
 		43EDDBF51C361D24007D89B5 /* CommonCrypto.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CommonCrypto.framework.dSYM; path = Carthage/Build/iOS/CommonCrypto.framework.dSYM; sourceTree = "<group>"; };
 		43EDDBF61C361D24007D89B5 /* xDripG5.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = xDripG5.framework.dSYM; path = Carthage/Build/iOS/xDripG5.framework.dSYM; sourceTree = "<group>"; };
-		43F2756B1BAA7BA9006A5B6A /* UnknownMessageBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownMessageBody.swift; sourceTree = "<group>"; };
 		43F4EF1C1BA2A57600526CE1 /* DiagnosticLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticLogger.swift; sourceTree = "<group>"; };
 		43F5C2C71B929BFF003EB13D /* Naterade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Naterade.entitlements; sourceTree = "<group>"; };
 		43F5C2C81B929C09003EB13D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -296,12 +374,27 @@
 		43F5C2D61B92A4DC003EB13D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43F5C2D81B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RileyLinkDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		43F5C2DA1B92A5E1003EB13D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		43F5C2DC1B937615003EB13D /* RileyLinkDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkDevice.h; sourceTree = "<group>"; };
-		43F5C2DD1B937615003EB13D /* RileyLinkDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkDevice.m; sourceTree = "<group>"; };
-		43F5C2DE1B937615003EB13D /* RileyLinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RileyLinkManager.h; sourceTree = "<group>"; };
-		43F5C2DF1B937615003EB13D /* RileyLinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RileyLinkManager.m; sourceTree = "<group>"; };
-		43F5C2E51B93C685003EB13D /* PumpDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PumpDataManager.swift; sourceTree = "<group>"; };
 		43F5C2E71B93DE9A003EB13D /* TextFieldTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewController.swift; sourceTree = "<group>"; };
+		43F78D251C8FC000002152D1 /* DoseMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoseMath.swift; sourceTree = "<group>"; };
+		43F78D2B1C8FC58F002152D1 /* NateradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NateradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F78D2D1C8FC58F002152D1 /* DoseMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseMathTests.swift; sourceTree = "<group>"; };
+		43F78D2F1C8FC58F002152D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F78D381C8FCC7B002152D1 /* read_selected_basal_profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = read_selected_basal_profile.json; sourceTree = "<group>"; };
+		43F78D3E1C911D2F002152D1 /* NateradeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NateradeTests.swift; sourceTree = "<group>"; };
+		43F78D401C911F70002152D1 /* recommend_temp_basal_no_change_glucose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_no_change_glucose.json; sourceTree = "<group>"; };
+		43F78D421C9131E0002152D1 /* recommend_temp_basal_start_high_end_in_range.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_start_high_end_in_range.json; sourceTree = "<group>"; };
+		43F78D441C9133D7002152D1 /* recommend_temp_basal_start_low_end_in_range.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_start_low_end_in_range.json; sourceTree = "<group>"; };
+		43F78D461C913CF8002152D1 /* recommend_temp_basal_correct_low_at_min.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_correct_low_at_min.json; sourceTree = "<group>"; };
+		43F78D481C914197002152D1 /* CarbKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarbKit.framework; path = Carthage/Build/iOS/CarbKit.framework; sourceTree = "<group>"; };
+		43F78D491C914197002152D1 /* GlucoseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GlucoseKit.framework; path = Carthage/Build/iOS/GlucoseKit.framework; sourceTree = "<group>"; };
+		43F78D4A1C914197002152D1 /* InsulinKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InsulinKit.framework; path = Carthage/Build/iOS/InsulinKit.framework; sourceTree = "<group>"; };
+		43F78D4B1C914197002152D1 /* LoopKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LoopKit.framework; path = Carthage/Build/iOS/LoopKit.framework; sourceTree = "<group>"; };
+		43F78D521C914AE4002152D1 /* recommend_temp_basal_start_high_end_low.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_start_high_end_low.json; sourceTree = "<group>"; };
+		43F78D541C914B19002152D1 /* recommend_temp_basal_start_low_end_high.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_start_low_end_high.json; sourceTree = "<group>"; };
+		43F78D561C914BD1002152D1 /* recommend_temp_basal_flat_and_high.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_flat_and_high.json; sourceTree = "<group>"; };
+		43F78D581C914C57002152D1 /* recommend_temp_basal_high_and_falling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_high_and_falling.json; sourceTree = "<group>"; };
+		43F78D5A1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_in_range_and_rising.json; sourceTree = "<group>"; };
+		43F78D5C1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_high_and_rising.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,27 +409,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4346D1F01C781BEA00ABAFE3 /* SwiftCharts.framework in Frameworks */,
 				43EDDBF21C361C75007D89B5 /* CommonCrypto.framework in Frameworks */,
-				43EDDBF31C361C75007D89B5 /* xDripG5.framework in Frameworks */,
-				43A943A91B928D400051FA24 /* RileyLinkKit.framework in Frameworks */,
-				438C934F1B97F82000BE20E9 /* MinimedKit.framework in Frameworks */,
+				43F78D4C1C914197002152D1 /* CarbKit.framework in Frameworks */,
+				43F78D4D1C914197002152D1 /* GlucoseKit.framework in Frameworks */,
 				43F5C2C91B929C09003EB13D /* HealthKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		437A28991C2F66DD00009647 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				437A28A11C2F66DE00009647 /* MinimedKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		438C93361B97F82000BE20E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				43F78D4E1C914197002152D1 /* InsulinKit.framework in Frameworks */,
+				43F78D4F1C914197002152D1 /* LoopKit.framework in Frameworks */,
+				43CA93371CB98079000026B5 /* MinimedKit.framework in Frameworks */,
+				43A943A91B928D400051FA24 /* RileyLinkKit.framework in Frameworks */,
+				4346D1F01C781BEA00ABAFE3 /* SwiftCharts.framework in Frameworks */,
+				43EDDBF31C361C75007D89B5 /* xDripG5.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,19 +436,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43F78D281C8FC58F002152D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434B2A0E1C97B24000BC3003 /* InsulinKit.framework in Frameworks */,
+				43F78D501C9141D3002152D1 /* LoopKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4326F5031BA5EC3D009204C6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				437A28AA1C2F6C4500009647 /* Int.swift */,
-				438C935D1B980BC000BE20E9 /* NSData.swift */,
-				4326F5041BA5EC8F009204C6 /* NSDateComponents.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		4346D1E81C77FEF100ABAFE3 /* Fixture Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +455,8 @@
 				438C5D481C7FFC8D00FCCEC5 /* iob.json */,
 				4346D1E91C77FF0E00ABAFE3 /* predict_glucose_from_dose.json */,
 				4346D1F91C790F6F00ABAFE3 /* FixtureData.swift */,
+				43EB40BD1C839DC400472A8C /* normalize_history.json */,
+				43EB40BF1C839DFB00472A8C /* predict_glucose.json */,
 			);
 			path = "Fixture Data";
 			sourceTree = "<group>";
@@ -382,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				43DE92601C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift */,
+				4331E0791C85650D00FBE832 /* ChartAxisValueDoubleLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,13 +474,12 @@
 			isa = PBXGroup;
 			children = (
 				43E3449B1B9CB08800C85C07 /* Naterade.playground */,
-				438C933B1B97F82000BE20E9 /* MinimedKit */,
-				437A289D1C2F66DE00009647 /* MinimedKitTests */,
 				43776F8E1B8022E90074EA36 /* Naterade */,
 				437A28AF1C2FB60C00009647 /* PumpCommandKit */,
 				43A943A31B928D400051FA24 /* RileyLinkKit */,
 				43A943731B926B7B0051FA24 /* WatchApp */,
 				43A943821B926B7B0051FA24 /* WatchApp Extension */,
+				43F78D2C1C8FC58F002152D1 /* NateradeTests */,
 				968DCD53F724DE56FFE51920 /* Frameworks */,
 				43776F8D1B8022E90074EA36 /* Products */,
 			);
@@ -409,8 +492,7 @@
 				43A943721B926B7B0051FA24 /* WatchApp.app */,
 				43A9437E1B926B7B0051FA24 /* WatchApp Extension.appex */,
 				43A943A21B928D400051FA24 /* RileyLinkKit.framework */,
-				438C933A1B97F82000BE20E9 /* MinimedKit.framework */,
-				437A289C1C2F66DD00009647 /* MinimedKitTests.xctest */,
+				43F78D2B1C8FC58F002152D1 /* NateradeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,52 +506,30 @@
 				43776F8F1B8022E90074EA36 /* AppDelegate.swift */,
 				43776F981B8022E90074EA36 /* Assets.xcassets */,
 				43E344A01B9E144300C85C07 /* Extensions */,
+				4346D1E81C77FEF100ABAFE3 /* Fixture Data */,
 				43776F9A1B8022E90074EA36 /* LaunchScreen.storyboard */,
 				43776F951B8022E90074EA36 /* Main.storyboard */,
 				43F5C2E41B93C5D4003EB13D /* Managers */,
 				43757D131C06F26C00910CB9 /* Models */,
-				4346D1E81C77FEF100ABAFE3 /* Fixture Data */,
+				43DBF04F1C93C10F00B3C386 /* Transitions */,
 				43F5C2CE1B92A2A0003EB13D /* View Controllers */,
 				43F5C2CF1B92A2ED003EB13D /* Views */,
 			);
 			path = Naterade;
 			sourceTree = "<group>";
 		};
-		437A289D1C2F66DE00009647 /* MinimedKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				437A28A01C2F66DE00009647 /* Info.plist */,
-				437A289E1C2F66DE00009647 /* MinimedKitTests.swift */,
-				43E3449C1B9D1B4100C85C07 /* MySentryPumpStatusMessageBodyTests.swift */,
-				430D5CE11B9C1879002551A8 /* NSDataTests.swift */,
-				433C8D071C2F5FC200F754CE /* ReadSettingsCarelinkMessageBodyTests.swift */,
-			);
-			path = MinimedKitTests;
-			sourceTree = "<group>";
-		};
 		437A28AF1C2FB60C00009647 /* PumpCommandKit */ = {
 			isa = PBXGroup;
 			children = (
+				43971A341C8BBC520013154F /* BolusCommand.swift */,
+				435F35591C9BCDBB00C204D2 /* ChangeTempBasalCommand.swift */,
 				437A28B21C2FC16700009647 /* PowerOnCommand.swift */,
 				437A28B01C2FB65800009647 /* ReadSettingsCommand.swift */,
+				43971A4F1C8E6B580013154F /* ReadTempBasalCommand.swift */,
+				43971A371C8BC5A00013154F /* RileyLinkDevice.swift */,
+				43971A3B1C8BC9750013154F /* TwoStepCommand.swift */,
 			);
 			path = PumpCommandKit;
-			sourceTree = "<group>";
-		};
-		438C933B1B97F82000BE20E9 /* MinimedKit */ = {
-			isa = PBXGroup;
-			children = (
-				438C933C1B97F82000BE20E9 /* MinimedKit.h */,
-				438C933E1B97F82000BE20E9 /* Info.plist */,
-				4326F5061BA6292F009204C6 /* AlertType.swift */,
-				43E0DE031B9AB6F6007B4443 /* MessageBody.swift */,
-				438C93591B97FEDA00BE20E9 /* MessageType.swift */,
-				438C93571B97FE5300BE20E9 /* PacketType.swift */,
-				438C935B1B9801DC00BE20E9 /* PumpMessage.swift */,
-				4326F5031BA5EC3D009204C6 /* Extensions */,
-				43E0DE051B9B51B3007B4443 /* Messages */,
-			);
-			path = MinimedKit;
 			sourceTree = "<group>";
 		};
 		43A943731B926B7B0051FA24 /* WatchApp */ = {
@@ -487,13 +547,20 @@
 			children = (
 				43A943911B926B7B0051FA24 /* Info.plist */,
 				439A30B61C540CF600059771 /* AddCarbsInterfaceController.swift */,
+				4354002C1C9F66C000D5819C /* BolusInterfaceController.swift */,
 				43757D171C07DA6D00910CB9 /* CLKComplicationTemplate.swift */,
 				43A9438D1B926B7B0051FA24 /* ComplicationController.swift */,
+				43DBF0541C93ED3000B3C386 /* DeviceDataManager.swift */,
+				4315D28E1CA5F60000589052 /* DiagnosticLogger+Error.swift */,
 				43A943871B926B7B0051FA24 /* ExtensionDelegate.swift */,
 				43A9438B1B926B7B0051FA24 /* GlanceController.swift */,
+				4354002E1C9F718600D5819C /* IdentifiableClass.swift */,
 				43A943851B926B7B0051FA24 /* InterfaceController.swift */,
 				43A943891B926B7B0051FA24 /* NotificationController.swift */,
-				432884F11BB515D40028E4EB /* PumpDataManager.swift */,
+				4315D28C1CA5F55F00589052 /* NSDateFormatter.swift */,
+				43C094471CAB9A21001F6403 /* NSUserDefaults.swift */,
+				435400381C9FB7FC00D5819C /* UIColor.swift */,
+				435400361C9F970500D5819C /* WKAlertAction.swift */,
 				43A9438F1B926B7B0051FA24 /* Assets.xcassets */,
 				43DE92571C5479C3001FFDE1 /* Models */,
 				43A943831B926B7B0051FA24 /* Supporting Files */,
@@ -512,66 +579,94 @@
 		43A943A31B928D400051FA24 /* RileyLinkKit */ = {
 			isa = PBXGroup;
 			children = (
-				432AC0C51C2A396A00B1DC2F /* CRC8.h */,
-				432AC0C61C2A396A00B1DC2F /* CRC8.m */,
-				43A943A61B928D400051FA24 /* Info.plist */,
-				43E0DDFB1B9A997B007B4443 /* MessageBase.h */,
-				43E0DDFC1B9A997B007B4443 /* MessageBase.m */,
-				43E0DDF71B9A98CA007B4443 /* MessageSendOperation.h */,
-				43E0DDF81B9A98CA007B4443 /* MessageSendOperation.m */,
-				43A943AF1B9298BF0051FA24 /* MinimedPacket.h */,
-				43A943B01B9298BF0051FA24 /* MinimedPacket.m */,
-				43A943BF1B92996B0051FA24 /* NSData+Conversion.h */,
-				43A943C01B92996B0051FA24 /* NSData+Conversion.m */,
-				43A943B11B9298BF0051FA24 /* RileyLinkBLEDevice.h */,
-				43A943B21B9298BF0051FA24 /* RileyLinkBLEDevice.m */,
-				43A943B31B9298BF0051FA24 /* RileyLinkBLEManager.h */,
-				43A943B41B9298BF0051FA24 /* RileyLinkBLEManager.m */,
-				439FC9EB1C321C67007DE84C /* RileyLinkDevice_Private.h */,
-				43F5C2DC1B937615003EB13D /* RileyLinkDevice.h */,
-				43F5C2DD1B937615003EB13D /* RileyLinkDevice.m */,
-				43A943A41B928D400051FA24 /* RileyLinkKit.h */,
-				43F5C2DE1B937615003EB13D /* RileyLinkManager.h */,
-				43F5C2DF1B937615003EB13D /* RileyLinkManager.m */,
-				43A943B51B9298BF0051FA24 /* SendDataTask.h */,
-				43A943B61B9298BF0051FA24 /* SendDataTask.m */,
+				43DC87C31C8B6791005BC30D /* RileyLink */,
+				43EB40A31C82865200472A8C /* Info.plist */,
+				43EB40B31C828ACB00472A8C /* RileyLinkDevice_Private.h */,
+				43EB40B21C828ACB00472A8C /* RileyLinkDevice.h */,
+				43EB40B11C828ACB00472A8C /* RileyLinkDevice.m */,
+				43EB40AD1C8287B200472A8C /* RileyLinkKit.h */,
+				43EB40B01C828ACB00472A8C /* RileyLinkManager.h */,
+				43EB40AF1C828ACB00472A8C /* RileyLinkManager.m */,
 			);
 			path = RileyLinkKit;
+			sourceTree = "<group>";
+		};
+		43DBF04F1C93C10F00B3C386 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				43DBF0501C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		43DC87C31C8B6791005BC30D /* RileyLink */ = {
+			isa = PBXGroup;
+			children = (
+				43EB408E1C82843100472A8C /* CmdBase.h */,
+				43EB408D1C82843100472A8C /* CmdBase.m */,
+				43EB408C1C82843100472A8C /* CRC8.h */,
+				43EB408B1C82843100472A8C /* CRC8.m */,
+				43DC87C81C8B6903005BC30D /* DeviceLinkMessage.h */,
+				43DC87C91C8B6903005BC30D /* DeviceLinkMessage.m */,
+				43DC87CC1C8B6917005BC30D /* FindDeviceMessage.h */,
+				43DC87CD1C8B6917005BC30D /* FindDeviceMessage.m */,
+				43EB40A81C8286E900472A8C /* GetPacketCmd.h */,
+				43EB40A71C8286E900472A8C /* GetPacketCmd.m */,
+				43EB40A61C8286E900472A8C /* GetVersionCmd.h */,
+				43EB40A51C8286E900472A8C /* GetVersionCmd.m */,
+				43EB40BA1C828AFF00472A8C /* MessageBase.h */,
+				43EB40B91C828AFF00472A8C /* MessageBase.m */,
+				43DC87D01C8B6920005BC30D /* MeterMessage.h */,
+				43DC87D11C8B6920005BC30D /* MeterMessage.m */,
+				43EB40981C8285B700472A8C /* MinimedPacket.h */,
+				43EB40971C8285B700472A8C /* MinimedPacket.m */,
+				43EB409C1C8285D600472A8C /* NSData+Conversion.h */,
+				43EB409B1C8285D600472A8C /* NSData+Conversion.m */,
+				43DC87D81C8B70DF005BC30D /* PumpOps.h */,
+				43DC87D91C8B70DF005BC30D /* PumpOps.m */,
+				43DC87DA1C8B70DF005BC30D /* PumpOpsSynchronous.h */,
+				43DC87DB1C8B70DF005BC30D /* PumpOpsSynchronous.m */,
+				43DC87D41C8B7090005BC30D /* PumpState.h */,
+				43DC87D51C8B7090005BC30D /* PumpState.m */,
+				43DC87C41C8B68A9005BC30D /* PumpStatusMessage.h */,
+				43DC87C51C8B68A9005BC30D /* PumpStatusMessage.m */,
+				43EB408A1C82843100472A8C /* RileyLinkBLEDevice.h */,
+				43EB40891C82843100472A8C /* RileyLinkBLEDevice.m */,
+				43EB40881C82843100472A8C /* RileyLinkBLEManager.h */,
+				43EB40871C82843100472A8C /* RileyLinkBLEManager.m */,
+				43EB40A01C82864200472A8C /* SendAndListenCmd.h */,
+				43EB409F1C82864200472A8C /* SendAndListenCmd.m */,
+				43DC87E01C8B7252005BC30D /* SendPacketCmd.h */,
+				43DC87E11C8B7252005BC30D /* SendPacketCmd.m */,
+				43DC87E41C8B726A005BC30D /* UpdateRegisterCmd.h */,
+				43DC87E51C8B726A005BC30D /* UpdateRegisterCmd.m */,
+			);
+			name = RileyLink;
+			path = ../../../ps2/rileylink_ios/RileyLink;
 			sourceTree = "<group>";
 		};
 		43DE92571C5479C3001FFDE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				435400301C9F744E00D5819C /* BolusSuggestionUserInfo.swift */,
 				43DE92581C5479E4001FFDE1 /* CarbEntryUserInfo.swift */,
+				435400331C9F878D00D5819C /* SetBolusUserInfo.swift */,
 				43DE925B1C547A20001FFDE1 /* WatchContext.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		43E0DE051B9B51B3007B4443 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				433C8D051C2F453500F754CE /* CarelinkMessageBody.swift */,
-				43E0DE011B9AA0D5007B4443 /* MySentryAckMessageBody.swift */,
-				430B2F851B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift */,
-				430B2F831B9C9F97005DCF14 /* MySentryAlertMessageBody.swift */,
-				43E0DE061B9B51EE007B4443 /* MySentryPumpStatusMessageBody.swift */,
-				437A28B41C2FC41700009647 /* PowerOnCarelinkMessageBody.swift */,
-				433C8D031C2F42DD00F754CE /* ReadSettingsCarelinkMessageBody.swift */,
-				43F2756B1BAA7BA9006A5B6A /* UnknownMessageBody.swift */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
 		43E344A01B9E144300C85C07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4346D1F11C7833CE00ABAFE3 /* Chart.swift */,
+				43DC87EA1C8B82BE005BC30D /* CBPeripheralState.swift */,
+				4331E0771C85302200FBE832 /* CGPoint.swift */,
 				4346D1F51C78501000ABAFE3 /* ChartPoint.swift */,
 				43649A621C7A347F00523D7F /* CollectionType.swift */,
 				43E344A51B9E1B3300C85C07 /* NSBundle.swift */,
 				43E344A31B9E1B1C00C85C07 /* NSUserDefaults.swift */,
 				43DE92501C541832001FFDE1 /* UIColor.swift */,
+				43CE7CDD1CA8B63E003CC1B0 /* NSDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -579,6 +674,12 @@
 		43F5C2CE1B92A2A0003EB13D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				43DBF04B1C93B8D700B3C386 /* BolusViewController.swift */,
+				4315D2861CA5CC3B00589052 /* CarbEntryEditTableViewController.swift */,
+				43DBF0581C93F73800B3C386 /* CarbEntryTableViewController.swift */,
+				43971A2C1C8B94010013154F /* CommandResponseViewController.swift */,
+				43DBF0561C93F6EB00B3C386 /* ReservoirTableViewController.swift */,
+				43DC87E81C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift */,
 				43F5C2DA1B92A5E1003EB13D /* SettingsTableViewController.swift */,
 				43E3449E1B9D68E900C85C07 /* StatusTableViewController.swift */,
 				43F5C2E71B93DE9A003EB13D /* TextFieldTableViewController.swift */,
@@ -591,7 +692,8 @@
 			children = (
 				4346D1E61C77F5FE00ABAFE3 /* ChartTableViewCell.swift */,
 				43F5C2D81B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift */,
-				434422B01C7C32B700D7EB3E /* TouchAndPanGestureRecognizer.swift */,
+				43EB40C11C83F84900472A8C /* StatusChartHighlightLayer.swift */,
+				43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,15 +701,54 @@
 		43F5C2E41B93C5D4003EB13D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				43F5C2E51B93C685003EB13D /* PumpDataManager.swift */,
+				43DBF0521C93EC8200B3C386 /* DeviceDataManager.swift */,
 				43F4EF1C1BA2A57600526CE1 /* DiagnosticLogger.swift */,
+				4315D2891CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift */,
+				43F78D251C8FC000002152D1 /* DoseMath.swift */,
+				43A567681C94880B00334FAC /* LoopDataManager.swift */,
+				43C094491CACCC73001F6403 /* NotificationManager.swift */,
+				43EB40851C82646A00472A8C /* StatusChartManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		43F78D2C1C8FC58F002152D1 /* NateradeTests */ = {
+			isa = PBXGroup;
+			children = (
+				43F78D2F1C8FC58F002152D1 /* Info.plist */,
+				43F78D2D1C8FC58F002152D1 /* DoseMathTests.swift */,
+				43F78D3E1C911D2F002152D1 /* NateradeTests.swift */,
+				43F78D351C8FCC47002152D1 /* Fixtures */,
+			);
+			path = NateradeTests;
+			sourceTree = "<group>";
+		};
+		43F78D351C8FCC47002152D1 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				43F78D381C8FCC7B002152D1 /* read_selected_basal_profile.json */,
+				43F78D461C913CF8002152D1 /* recommend_temp_basal_correct_low_at_min.json */,
+				43F78D561C914BD1002152D1 /* recommend_temp_basal_flat_and_high.json */,
+				43F78D581C914C57002152D1 /* recommend_temp_basal_high_and_falling.json */,
+				43F78D5C1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json */,
+				43F78D5A1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json */,
+				43F78D401C911F70002152D1 /* recommend_temp_basal_no_change_glucose.json */,
+				43F78D421C9131E0002152D1 /* recommend_temp_basal_start_high_end_in_range.json */,
+				43F78D521C914AE4002152D1 /* recommend_temp_basal_start_high_end_low.json */,
+				43F78D541C914B19002152D1 /* recommend_temp_basal_start_low_end_high.json */,
+				43F78D441C9133D7002152D1 /* recommend_temp_basal_start_low_end_in_range.json */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		968DCD53F724DE56FFE51920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43CA93361CB98079000026B5 /* MinimedKit.framework */,
+				43F78D481C914197002152D1 /* CarbKit.framework */,
+				43F78D491C914197002152D1 /* GlucoseKit.framework */,
+				43F78D4A1C914197002152D1 /* InsulinKit.framework */,
+				43F78D4B1C914197002152D1 /* LoopKit.framework */,
 				4346D1EF1C781BEA00ABAFE3 /* SwiftCharts.framework */,
 				43EDDBF01C361C75007D89B5 /* CommonCrypto.framework */,
 				43EDDBF51C361D24007D89B5 /* CommonCrypto.framework.dSYM */,
@@ -621,30 +762,33 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		438C93371B97F82000BE20E9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				438C933D1B97F82000BE20E9 /* MinimedKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		43A9439F1B928D400051FA24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43E0DDFD1B9A997B007B4443 /* MessageBase.h in Headers */,
-				43A943BB1B9298BF0051FA24 /* RileyLinkBLEManager.h in Headers */,
-				43E0DDF91B9A98CA007B4443 /* MessageSendOperation.h in Headers */,
-				439FC9EC1C321C67007DE84C /* RileyLinkDevice_Private.h in Headers */,
-				432AC0C71C2A396A00B1DC2F /* CRC8.h in Headers */,
-				43A943B91B9298BF0051FA24 /* RileyLinkBLEDevice.h in Headers */,
-				43A943B71B9298BF0051FA24 /* MinimedPacket.h in Headers */,
-				43A943C11B92996B0051FA24 /* NSData+Conversion.h in Headers */,
-				43A943A51B928D400051FA24 /* RileyLinkKit.h in Headers */,
-				43F5C2E01B937615003EB13D /* RileyLinkDevice.h in Headers */,
-				43F5C2E21B937615003EB13D /* RileyLinkManager.h in Headers */,
-				43A943BD1B9298BF0051FA24 /* SendDataTask.h in Headers */,
+				43DC87CE1C8B6917005BC30D /* FindDeviceMessage.h in Headers */,
+				43EB40AC1C8286E900472A8C /* GetPacketCmd.h in Headers */,
+				43DC87C61C8B68A9005BC30D /* PumpStatusMessage.h in Headers */,
+				43EB40A21C82864200472A8C /* SendAndListenCmd.h in Headers */,
+				43EB40921C82843100472A8C /* RileyLinkBLEDevice.h in Headers */,
+				43DC87E21C8B7252005BC30D /* SendPacketCmd.h in Headers */,
+				43DC87DE1C8B70DF005BC30D /* PumpOpsSynchronous.h in Headers */,
+				43EB40BC1C828AFF00472A8C /* MessageBase.h in Headers */,
+				43EB409A1C8285B700472A8C /* MinimedPacket.h in Headers */,
+				43DC87E61C8B726A005BC30D /* UpdateRegisterCmd.h in Headers */,
+				43DC87DC1C8B70DF005BC30D /* PumpOps.h in Headers */,
+				43EB40941C82843100472A8C /* CRC8.h in Headers */,
+				43EB40AE1C8287B200472A8C /* RileyLinkKit.h in Headers */,
+				43EB40B81C828ACB00472A8C /* RileyLinkDevice_Private.h in Headers */,
+				43EB409E1C8285D600472A8C /* NSData+Conversion.h in Headers */,
+				43EB40B51C828ACB00472A8C /* RileyLinkManager.h in Headers */,
+				43EB40961C82843100472A8C /* CmdBase.h in Headers */,
+				43DC87CA1C8B6903005BC30D /* DeviceLinkMessage.h in Headers */,
+				43EB40901C82843100472A8C /* RileyLinkBLEManager.h in Headers */,
+				43EB40B71C828ACB00472A8C /* RileyLinkDevice.h in Headers */,
+				43DC87D61C8B7090005BC30D /* PumpState.h in Headers */,
+				43DC87D21C8B6920005BC30D /* MeterMessage.h in Headers */,
+				43EB40AA1C8286E900472A8C /* GetVersionCmd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,48 +811,11 @@
 			dependencies = (
 				43A943931B926B7B0051FA24 /* PBXTargetDependency */,
 				43A943A81B928D400051FA24 /* PBXTargetDependency */,
-				438C934E1B97F82000BE20E9 /* PBXTargetDependency */,
 			);
 			name = Naterade;
 			productName = Naterade;
 			productReference = 43776F8C1B8022E90074EA36 /* Naterade.app */;
 			productType = "com.apple.product-type.application";
-		};
-		437A289B1C2F66DD00009647 /* MinimedKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 437A28A41C2F66DE00009647 /* Build configuration list for PBXNativeTarget "MinimedKitTests" */;
-			buildPhases = (
-				437A28981C2F66DD00009647 /* Sources */,
-				437A28991C2F66DD00009647 /* Frameworks */,
-				437A289A1C2F66DD00009647 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				437A28A31C2F66DE00009647 /* PBXTargetDependency */,
-			);
-			name = MinimedKitTests;
-			productName = MinimedKitTests;
-			productReference = 437A289C1C2F66DD00009647 /* MinimedKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		438C93391B97F82000BE20E9 /* MinimedKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 438C93511B97F82100BE20E9 /* Build configuration list for PBXNativeTarget "MinimedKit" */;
-			buildPhases = (
-				438C93351B97F82000BE20E9 /* Sources */,
-				438C93361B97F82000BE20E9 /* Frameworks */,
-				438C93371B97F82000BE20E9 /* Headers */,
-				438C93381B97F82000BE20E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MinimedKit;
-			productName = MinimedKit;
-			productReference = 438C933A1B97F82000BE20E9 /* MinimedKit.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		43A943711B926B7B0051FA24 /* WatchApp */ = {
 			isa = PBXNativeTarget;
@@ -764,6 +871,24 @@
 			productReference = 43A943A21B928D400051FA24 /* RileyLinkKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		43F78D2A1C8FC58F002152D1 /* NateradeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43F78D321C8FC58F002152D1 /* Build configuration list for PBXNativeTarget "NateradeTests" */;
+			buildPhases = (
+				43F78D271C8FC58F002152D1 /* Sources */,
+				43F78D281C8FC58F002152D1 /* Frameworks */,
+				43F78D291C8FC58F002152D1 /* Resources */,
+				434B2A0B1C97B1F600BC3003 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NateradeTests;
+			productName = NateradeTests;
+			productReference = 43F78D2B1C8FC58F002152D1 /* NateradeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -791,13 +916,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					437A289B1C2F66DD00009647 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					438C93391B97F82000BE20E9 = {
-						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 26AMK8X5DW;
 					};
 					43A943711B926B7B0051FA24 = {
 						CreatedOnToolsVersion = 7.0;
@@ -827,6 +945,9 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 26AMK8X5DW;
 					};
+					43F78D2A1C8FC58F002152D1 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 43776F871B8022E90074EA36 /* Build configuration list for PBXProject "Naterade" */;
@@ -846,8 +967,7 @@
 				43A943711B926B7B0051FA24 /* WatchApp */,
 				43A9437D1B926B7B0051FA24 /* WatchApp Extension */,
 				43A943A11B928D400051FA24 /* RileyLinkKit */,
-				438C93391B97F82000BE20E9 /* MinimedKit */,
-				437A289B1C2F66DD00009647 /* MinimedKitTests */,
+				43F78D2A1C8FC58F002152D1 /* NateradeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -857,27 +977,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EB40BE1C839DC400472A8C /* normalize_history.json in Resources */,
 				43776F9C1B8022E90074EA36 /* LaunchScreen.storyboard in Resources */,
 				438C5D491C7FFC8D00FCCEC5 /* iob.json in Resources */,
 				43776F991B8022E90074EA36 /* Assets.xcassets in Resources */,
+				43EB40C01C839DFB00472A8C /* predict_glucose.json in Resources */,
 				43776F971B8022E90074EA36 /* Main.storyboard in Resources */,
 				4346D1EB1C77FF0E00ABAFE3 /* predict_glucose_from_dose.json in Resources */,
 				4346D1EC1C77FF0E00ABAFE3 /* clean_glucose.json in Resources */,
 				43E344A81B9EAA8400C85C07 /* RemoteSettings.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		437A289A1C2F66DD00009647 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		438C93381B97F82000BE20E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,6 +1003,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A943901B926B7B0051FA24 /* Assets.xcassets in Resources */,
+				4315D2901CA6332F00589052 /* RemoteSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +1011,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43F78D291C8FC58F002152D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43F78D391C8FCC7B002152D1 /* read_selected_basal_profile.json in Resources */,
+				43F78D411C911F70002152D1 /* recommend_temp_basal_no_change_glucose.json in Resources */,
+				43F78D551C914B19002152D1 /* recommend_temp_basal_start_low_end_high.json in Resources */,
+				43F78D431C9131E0002152D1 /* recommend_temp_basal_start_high_end_in_range.json in Resources */,
+				43F78D471C913CF8002152D1 /* recommend_temp_basal_correct_low_at_min.json in Resources */,
+				43F78D531C914AE4002152D1 /* recommend_temp_basal_start_high_end_low.json in Resources */,
+				43F78D591C914C57002152D1 /* recommend_temp_basal_high_and_falling.json in Resources */,
+				43F78D5B1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json in Resources */,
+				43F78D451C9133D7002152D1 /* recommend_temp_basal_start_low_end_in_range.json in Resources */,
+				43F78D571C914BD1002152D1 /* recommend_temp_basal_flat_and_high.json in Resources */,
+				43F78D5D1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +1048,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/InsulinKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/LoopKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftCharts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MinimedKit.framework",
 			);
 			outputPaths = (
 			);
@@ -935,61 +1063,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43971A2D1C8B94010013154F /* CommandResponseViewController.swift in Sources */,
+				4315D28A1CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift in Sources */,
 				43776F901B8022E90074EA36 /* AppDelegate.swift in Sources */,
+				43CE7CDE1CA8B63E003CC1B0 /* NSDate.swift in Sources */,
 				43F5C2D91B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift in Sources */,
 				43F5C2DB1B92A5E1003EB13D /* SettingsTableViewController.swift in Sources */,
 				43F5C2E81B93DE9A003EB13D /* TextFieldTableViewController.swift in Sources */,
+				43A5676B1C96155700334FAC /* SwitchTableViewCell.swift in Sources */,
+				43971A3C1C8BC9750013154F /* TwoStepCommand.swift in Sources */,
+				43971A361C8BC1150013154F /* BolusCommand.swift in Sources */,
+				43DC87EB1C8B82BE005BC30D /* CBPeripheralState.swift in Sources */,
+				43A567691C94880B00334FAC /* LoopDataManager.swift in Sources */,
 				43E344A41B9E1B1C00C85C07 /* NSUserDefaults.swift in Sources */,
+				43971A501C8E6B580013154F /* ReadTempBasalCommand.swift in Sources */,
 				43649A631C7A347F00523D7F /* CollectionType.swift in Sources */,
+				43DC87E91C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift in Sources */,
 				4346D1FA1C790F6F00ABAFE3 /* FixtureData.swift in Sources */,
+				435400321C9F745500D5819C /* BolusSuggestionUserInfo.swift in Sources */,
 				43E3449F1B9D68E900C85C07 /* StatusTableViewController.swift in Sources */,
 				43E344A61B9E1B3300C85C07 /* NSBundle.swift in Sources */,
 				437A28B11C2FB65800009647 /* ReadSettingsCommand.swift in Sources */,
+				43DBF0531C93EC8200B3C386 /* DeviceDataManager.swift in Sources */,
 				4346D1E71C77F5FE00ABAFE3 /* ChartTableViewCell.swift in Sources */,
-				43DE92511C541832001FFDE1 /* UIColor.swift in Sources */,
+				43DBF0591C93F73800B3C386 /* CarbEntryTableViewController.swift in Sources */,
 				43DE925C1C547A20001FFDE1 /* WatchContext.swift in Sources */,
-				43F5C2E61B93C685003EB13D /* PumpDataManager.swift in Sources */,
+				43EB40861C82646A00472A8C /* StatusChartManager.swift in Sources */,
+				43C0944A1CACCC73001F6403 /* NotificationManager.swift in Sources */,
+				43EB40C21C83F84900472A8C /* StatusChartHighlightLayer.swift in Sources */,
+				4315D2871CA5CC3B00589052 /* CarbEntryEditTableViewController.swift in Sources */,
+				4331E0781C85302200FBE832 /* CGPoint.swift in Sources */,
+				43DBF04C1C93B8D700B3C386 /* BolusViewController.swift in Sources */,
+				43DBF0571C93F6EB00B3C386 /* ReservoirTableViewController.swift in Sources */,
+				435400341C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */,
+				4354003A1C9FB81100D5819C /* UIColor.swift in Sources */,
+				43DBF0511C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift in Sources */,
+				43F78D261C8FC000002152D1 /* DoseMath.swift in Sources */,
+				4331E07A1C85650D00FBE832 /* ChartAxisValueDoubleLog.swift in Sources */,
+				435F355B1C9BCDCC00C204D2 /* ChangeTempBasalCommand.swift in Sources */,
 				437A28B31C2FC16700009647 /* PowerOnCommand.swift in Sources */,
-				4346D1F21C7833CE00ABAFE3 /* Chart.swift in Sources */,
+				43971A381C8BC5A00013154F /* RileyLinkDevice.swift in Sources */,
 				4346D1F61C78501000ABAFE3 /* ChartPoint.swift in Sources */,
-				434422B11C7C32B700D7EB3E /* TouchAndPanGestureRecognizer.swift in Sources */,
 				43F4EF1D1BA2A57600526CE1 /* DiagnosticLogger.swift in Sources */,
 				43DE92591C5479E4001FFDE1 /* CarbEntryUserInfo.swift in Sources */,
 				43DE92611C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		437A28981C2F66DD00009647 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				437A28A71C2F676C00009647 /* MySentryPumpStatusMessageBodyTests.swift in Sources */,
-				437A28A91C2F677100009647 /* ReadSettingsCarelinkMessageBodyTests.swift in Sources */,
-				437A28A81C2F676F00009647 /* NSDataTests.swift in Sources */,
-				437A289F1C2F66DE00009647 /* MinimedKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		438C93351B97F82000BE20E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				433C8D041C2F42DD00F754CE /* ReadSettingsCarelinkMessageBody.swift in Sources */,
-				43E0DE071B9B51EE007B4443 /* MySentryPumpStatusMessageBody.swift in Sources */,
-				437A28B51C2FC41700009647 /* PowerOnCarelinkMessageBody.swift in Sources */,
-				438C93581B97FE5300BE20E9 /* PacketType.swift in Sources */,
-				43F2756C1BAA7BA9006A5B6A /* UnknownMessageBody.swift in Sources */,
-				438C935C1B9801DC00BE20E9 /* PumpMessage.swift in Sources */,
-				438C935E1B980BC000BE20E9 /* NSData.swift in Sources */,
-				433C8D061C2F453500F754CE /* CarelinkMessageBody.swift in Sources */,
-				4326F5051BA5EC8F009204C6 /* NSDateComponents.swift in Sources */,
-				43E0DE041B9AB6F6007B4443 /* MessageBody.swift in Sources */,
-				438C935A1B97FEDA00BE20E9 /* MessageType.swift in Sources */,
-				43E0DE021B9AA0D5007B4443 /* MySentryAckMessageBody.swift in Sources */,
-				430B2F841B9C9F97005DCF14 /* MySentryAlertMessageBody.swift in Sources */,
-				437A28AB1C2F6C4500009647 /* Int.swift in Sources */,
-				430B2F861B9CA2D4005DCF14 /* MySentryAlertClearedMessageBody.swift in Sources */,
-				4326F5071BA6292F009204C6 /* AlertType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,25 +1114,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43FF3D661BADE39000DE240A /* UnknownMessageBody.swift in Sources */,
+				435400311C9F744E00D5819C /* BolusSuggestionUserInfo.swift in Sources */,
+				43DBF0551C93ED3000B3C386 /* DeviceDataManager.swift in Sources */,
+				4315D28D1CA5F55F00589052 /* NSDateFormatter.swift in Sources */,
 				43A9438A1B926B7B0051FA24 /* NotificationController.swift in Sources */,
+				4354002D1C9F66C000D5819C /* BolusInterfaceController.swift in Sources */,
 				43A943881B926B7B0051FA24 /* ExtensionDelegate.swift in Sources */,
-				43FF3D631BADE39000DE240A /* MySentryAlertClearedMessageBody.swift in Sources */,
-				43FF3D681BADE39400DE240A /* PacketType.swift in Sources */,
+				435400371C9F970500D5819C /* WKAlertAction.swift in Sources */,
+				4315D28B1CA5F48100589052 /* DiagnosticLogger.swift in Sources */,
 				43757D181C07DA6D00910CB9 /* CLKComplicationTemplate.swift in Sources */,
-				43FF3D5E1BADE38300DE240A /* AlertType.swift in Sources */,
+				4354002F1C9F718600D5819C /* IdentifiableClass.swift in Sources */,
 				439A30B71C540CF600059771 /* AddCarbsInterfaceController.swift in Sources */,
-				43FF3D611BADE38C00DE240A /* MessageBody.swift in Sources */,
 				43DE925A1C5479E4001FFDE1 /* CarbEntryUserInfo.swift in Sources */,
-				432884F21BB515D40028E4EB /* PumpDataManager.swift in Sources */,
+				4315D28F1CA5F60000589052 /* DiagnosticLogger+Error.swift in Sources */,
 				43A9438E1B926B7B0051FA24 /* ComplicationController.swift in Sources */,
-				43FF3D641BADE39000DE240A /* MySentryAlertMessageBody.swift in Sources */,
+				43C094481CAB9A21001F6403 /* NSUserDefaults.swift in Sources */,
 				43A943861B926B7B0051FA24 /* InterfaceController.swift in Sources */,
-				43DE92531C541D36001FFDE1 /* UIColor.swift in Sources */,
-				43FF3D5F1BADE38800DE240A /* NSData.swift in Sources */,
+				435400391C9FB7FC00D5819C /* UIColor.swift in Sources */,
 				43DE925D1C547A20001FFDE1 /* WatchContext.swift in Sources */,
-				43FF3D601BADE38800DE240A /* NSDateComponents.swift in Sources */,
 				43A9438C1B926B7B0051FA24 /* GlanceController.swift in Sources */,
+				435400351C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,32 +1141,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F5C2E31B937615003EB13D /* RileyLinkManager.m in Sources */,
-				43A943C21B92996B0051FA24 /* NSData+Conversion.m in Sources */,
-				43E0DDFE1B9A997B007B4443 /* MessageBase.m in Sources */,
-				432AC0C81C2A396A00B1DC2F /* CRC8.m in Sources */,
-				43F5C2E11B937615003EB13D /* RileyLinkDevice.m in Sources */,
-				43E0DDFA1B9A98CA007B4443 /* MessageSendOperation.m in Sources */,
-				43A943BE1B9298BF0051FA24 /* SendDataTask.m in Sources */,
-				43A943BC1B9298BF0051FA24 /* RileyLinkBLEManager.m in Sources */,
-				43A943B81B9298BF0051FA24 /* MinimedPacket.m in Sources */,
-				43A943BA1B9298BF0051FA24 /* RileyLinkBLEDevice.m in Sources */,
+				43EB40BB1C828AFF00472A8C /* MessageBase.m in Sources */,
+				43DC87C71C8B68A9005BC30D /* PumpStatusMessage.m in Sources */,
+				43EB409D1C8285D600472A8C /* NSData+Conversion.m in Sources */,
+				43EB408F1C82843100472A8C /* RileyLinkBLEManager.m in Sources */,
+				43DC87CF1C8B6917005BC30D /* FindDeviceMessage.m in Sources */,
+				43EB40991C8285B700472A8C /* MinimedPacket.m in Sources */,
+				43DC87CB1C8B6903005BC30D /* DeviceLinkMessage.m in Sources */,
+				43EB40B61C828ACB00472A8C /* RileyLinkDevice.m in Sources */,
+				43EB40A11C82864200472A8C /* SendAndListenCmd.m in Sources */,
+				43EB40A91C8286E900472A8C /* GetVersionCmd.m in Sources */,
+				43EB40B41C828ACB00472A8C /* RileyLinkManager.m in Sources */,
+				43DC87DF1C8B70DF005BC30D /* PumpOpsSynchronous.m in Sources */,
+				43DC87D31C8B6920005BC30D /* MeterMessage.m in Sources */,
+				43DC87DD1C8B70DF005BC30D /* PumpOps.m in Sources */,
+				43EB40911C82843100472A8C /* RileyLinkBLEDevice.m in Sources */,
+				43EB40931C82843100472A8C /* CRC8.m in Sources */,
+				43DC87E71C8B726A005BC30D /* UpdateRegisterCmd.m in Sources */,
+				43DC87E31C8B7252005BC30D /* SendPacketCmd.m in Sources */,
+				43EB40AB1C8286E900472A8C /* GetPacketCmd.m in Sources */,
+				43DC87D71C8B7090005BC30D /* PumpState.m in Sources */,
+				43EB40951C82843100472A8C /* CmdBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43F78D271C8FC58F002152D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43F78D511C914444002152D1 /* DoseMath.swift in Sources */,
+				43F78D2E1C8FC58F002152D1 /* DoseMathTests.swift in Sources */,
+				43F78D3F1C911D2F002152D1 /* NateradeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		437A28A31C2F66DE00009647 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 438C93391B97F82000BE20E9 /* MinimedKit */;
-			targetProxy = 437A28A21C2F66DE00009647 /* PBXContainerItemProxy */;
-		};
-		438C934E1B97F82000BE20E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 438C93391B97F82000BE20E9 /* MinimedKit */;
-			targetProxy = 438C934D1B97F82000BE20E9 /* PBXContainerItemProxy */;
-		};
 		43A943811B926B7B0051FA24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 43A9437D1B926B7B0051FA24 /* WatchApp Extension */;
@@ -1130,6 +1259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1169,6 +1299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1183,13 +1314,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Naterade/Naterade.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Naterade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.Naterade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1202,88 +1333,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Naterade/Naterade.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Naterade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.Naterade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		437A28A51C2F66DE00009647 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = MinimedKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.MinimedKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		437A28A61C2F66DE00009647 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = MinimedKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.MinimedKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		438C93521B97F82100BE20E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MinimedKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.MinimedKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		438C93531B97F82100BE20E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MinimedKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.MinimedKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1300,7 +1360,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1317,7 +1376,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -1337,7 +1395,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1357,7 +1414,6 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -1401,6 +1457,36 @@
 			};
 			name = Release;
 		};
+		43F78D331C8FC58F002152D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = NateradeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.NateradeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		43F78D341C8FC58F002152D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = NateradeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.loudnate.NateradeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1418,24 +1504,6 @@
 			buildConfigurations = (
 				43776FB71B8022E90074EA36 /* Debug */,
 				43776FB81B8022E90074EA36 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		437A28A41C2F66DE00009647 /* Build configuration list for PBXNativeTarget "MinimedKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				437A28A51C2F66DE00009647 /* Debug */,
-				437A28A61C2F66DE00009647 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		438C93511B97F82100BE20E9 /* Build configuration list for PBXNativeTarget "MinimedKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				438C93521B97F82100BE20E9 /* Debug */,
-				438C93531B97F82100BE20E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1463,6 +1531,15 @@
 			buildConfigurations = (
 				43A943AC1B928D400051FA24 /* Debug */,
 				43A943AD1B928D400051FA24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43F78D321C8FC58F002152D1 /* Build configuration list for PBXNativeTarget "NateradeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43F78D331C8FC58F002152D1 /* Debug */,
+				43F78D341C8FC58F002152D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,23 +10,23 @@ import WatchKit
 import Foundation
 
 
-class AddCarbsInterfaceController: WKInterfaceController {
+class AddCarbsInterfaceController: WKInterfaceController, IdentifiableClass {
 
-    var carbValue: Int = 15
+    private var carbValue: Int = 15
 
-    var absorptionTime = AbsorptionTimeType.Medium {
+    private var absorptionTime = AbsorptionTimeType.Medium {
         didSet {
-            absorptionButtonA.setBackgroundColor(UIColor.darkTintColor())
-            absorptionButtonB.setBackgroundColor(UIColor.darkTintColor())
-            absorptionButtonC.setBackgroundColor(UIColor.darkTintColor())
+            absorptionButtonA.setBackgroundColor(UIColor.darkTintColor)
+            absorptionButtonB.setBackgroundColor(UIColor.darkTintColor)
+            absorptionButtonC.setBackgroundColor(UIColor.darkTintColor)
 
             switch absorptionTime {
             case .Fast:
-                absorptionButtonA.setBackgroundColor(UIColor.tintColor())
+                absorptionButtonA.setBackgroundColor(UIColor.tintColor)
             case .Medium:
-                absorptionButtonB.setBackgroundColor(UIColor.tintColor())
+                absorptionButtonB.setBackgroundColor(UIColor.tintColor)
             case .Slow:
-                absorptionButtonC.setBackgroundColor(UIColor.tintColor())
+                absorptionButtonC.setBackgroundColor(UIColor.tintColor)
             }
         }
     }
@@ -34,8 +34,6 @@ class AddCarbsInterfaceController: WKInterfaceController {
     @IBOutlet var valueLabel: WKInterfaceLabel!
 
     @IBOutlet var valuePicker: WKInterfacePicker!
-
-    @IBOutlet var incrementButton: WKInterfaceButton!
 
     @IBOutlet var absorptionButtonA: WKInterfaceButton!
 
@@ -100,10 +98,10 @@ class AddCarbsInterfaceController: WKInterfaceController {
         if carbValue > 0 {
             let entry = CarbEntryUserInfo(value: Double(carbValue), absorptionTimeType: absorptionTime, startDate: NSDate())
 
-            PumpDataManager.sharedManager.sendCarbEntry(entry)
+            DeviceDataManager.sharedManager.sendCarbEntry(entry)
         }
 
-        popController()
+        dismissController()
     }
 
 }

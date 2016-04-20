@@ -16,18 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window?.tintColor = UIColor.tintColor
 
-        window?.tintColor = UIColor.tintColor()
-
-        if let tabBarController = window?.rootViewController as? UITabBarController {
-            for viewController in tabBarController.viewControllers ?? [] {
-                if let vc = viewController.childViewControllers.first as? CarbEntryTableViewController {
-                    vc.carbStore = PumpDataManager.sharedManager.carbStore
-                } else if let vc = viewController.childViewControllers.first as? ReservoirTableViewController {
-                    vc.doseStore = PumpDataManager.sharedManager.doseStore
-                }
-            }
-        }
+        NotificationManager.authorize()
 
         return true
     }
@@ -49,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-        PumpDataManager.sharedManager.transmitter?.resumeScanning()
+        DeviceDataManager.sharedManager.transmitter?.resumeScanning()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -59,5 +50,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationShouldRequestHealthAuthorization(application: UIApplication) {
 
     }
-}
 
+    // MARK: - Notifications
+
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        if application.applicationState == .Active {
+            if let message = notification.alertBody {
+                window?.rootViewController?.presentAlertControllerWithTitle(notification.alertTitle, message: message, animated: true, completion: nil)
+            }
+        }
+
+        if notification.category == NotificationManager.Category.LoopNotRunning.rawValue {
+            print("LoopNotRunning")
+        }
+    }
+
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+
+        switch identifier {
+        case NotificationManager.Action.RetryBolus.rawValue?:
+            if let units = notification.userInfo?[NotificationManager.UserInfoKey.BolusAmount.rawValue] as? Double,
+                startDate = notification.userInfo?[NotificationManager.UserInfoKey.BolusStartDate.rawValue] as? NSDate where
+                startDate.timeIntervalSinceNow >= NSTimeInterval(minutes: -5)
+            {
+                DeviceDataManager.sharedManager.loopManager.enactBolus(units) { (success, error) in
+                    if !success {
+                        NotificationManager.sendBolusFailureNotificationForAmount(units, atDate: startDate)
+                    }
+
+                    completionHandler()
+                }
+                return
+            }
+        default:
+            break
+        }
+
+        completionHandler()
+    }
+
+    // MARK: - 3D Touch
+
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        completionHandler(false)
+    }
+}

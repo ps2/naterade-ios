@@ -28,7 +28,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var IOBLabel: WKInterfaceLabel!
     @IBOutlet var reservoirLabel: WKInterfaceLabel!
 
-    let dataManager = PumpDataManager.sharedManager
+    let dataManager = DeviceDataManager.sharedManager
 
     let dateFormatter: NSDateComponentsFormatter = {
         let dateFormatter = NSDateComponentsFormatter()
@@ -107,13 +107,7 @@ class InterfaceController: WKInterfaceController {
             }
         }
 
-        if let server = CLKComplicationServer.sharedInstance(),
-            complications = server.activeComplications
-        {
-            for complication in complications {
-                server.extendTimelineForComplication(complication)
-            }
-        }
+        DeviceDataManager.sharedManager.updateComplicationDataIfNeeded()
     }
 
     // MARK: - KVO
@@ -126,5 +120,15 @@ class InterfaceController: WKInterfaceController {
         } else {
             super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
         }
+    }
+
+    // MARK: - Menu Items
+
+    @IBAction func addCarbs() {
+        presentControllerWithName(AddCarbsInterfaceController.className, context: nil)
+    }
+
+    @IBAction func setBolus() {
+        presentControllerWithName(BolusInterfaceController.className, context: nil)
     }
 }
