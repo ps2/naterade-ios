@@ -129,6 +129,12 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             }
         }
     }
+    
+    private func getPumpHistory(device: RileyLinkDevice) {
+        device.ops!.getHistoryEventsSinceDate(observingPumpEventsSince) { (response) -> Void in
+            
+        }
+    }
 
     // MARK: - Transmitter
 
@@ -478,6 +484,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
     static let sharedManager = DeviceDataManager()
 
     private(set) var loopManager: LoopDataManager!
+    
+    private var observingPumpEventsSince: NSDate
 
     override init() {
         doseStore = DoseStore(
@@ -507,6 +515,9 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             pumpState: pumpState,
             autoConnectIDs: connectedPeripheralIDs
         )
+        
+        let calendar = NSCalendar.currentCalendar()
+        observingPumpEventsSince = calendar.dateByAddingUnit(.Day, value: -1, toDate: NSDate(), options: [])!
 
         super.init()
 
