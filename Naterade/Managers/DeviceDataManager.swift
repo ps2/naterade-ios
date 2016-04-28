@@ -26,6 +26,7 @@ enum State<T> {
 class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSessionDelegate {
     static let GlucoseUpdatedNotification = "com.loudnate.Naterade.notification.GlucoseUpdated"
     static let PumpStatusUpdatedNotification = "com.loudnate.Naterade.notification.PumpStatusUpdated"
+    static let PumpEventsUpdatedNotification = "com.loudnate.Naterade.notification.PumpEventsUpdated"
 
     enum Error: ErrorType {
         case ValueError(String)
@@ -131,13 +132,32 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             if status.batteryRemainingPercent == 0 {
                 NotificationManager.sendPumpBatteryLowNotification()
             }
+            
+            // Sentry packets are sent in groups of 3, 5s apart. Wait 11s to avoid conflicting comms.
+            let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(11 * NSEC_PER_SEC))
+            dispatch_after(delay, dispatch_get_main_queue()) {
+                self.getPumpHistory(device)
+            }
         }
     }
     
     private func getPumpHistory(device: RileyLinkDevice) {
         device.ops!.getHistoryEventsSinceDate(observingPumpEventsSince) { (response) -> Void in
-            
+            switch response {
+                case .Success(let (events, pumpModel)):
+                    NSLog("fetchHistory succeeded.")
+                    self.handleNewHistoryEvents(events, pumpModel: pumpModel)
+                    NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.PumpEventsUpdatedNotification, object: self)
+
+                case .Failure(let error):
+                    NSLog("History fetch failed: %@", String(error))
+            }
         }
+    }
+    
+    private func handleNewHistoryEvents(events: [PumpEvent], pumpModel: PumpModel) {
+        // TODO: get insulin doses from history
+        // TODO: upload events to Nightscout
     }
 
     private func checkPumpReservoirForAmount(newAmount: Double, previousAmount: Double, timeLeft: NSTimeInterval) {
