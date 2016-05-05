@@ -102,16 +102,20 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         connectedPeripheralIDs.insert(device.peripheral.identifier.UUIDString)
 
         rileyLinkManager.connectDevice(device)
+
+        AnalyticsManager.didChangeRileyLinkConnectionState()
     }
 
     func disconnectFromRileyLink(device: RileyLinkDevice) {
         connectedPeripheralIDs.remove(device.peripheral.identifier.UUIDString)
 
         rileyLinkManager.disconnectDevice(device)
+
+        AnalyticsManager.didChangeRileyLinkConnectionState()
     }
 
     private func updatePumpStatus(status: MySentryPumpStatusMessageBody, fromDevice device: RileyLinkDevice) {
-        status.pumpDateComponents.timeZone = pumpTimeZone
+        status.pumpDateComponents.timeZone = pumpState?.timeZone
 
         if status != latestPumpStatus, let pumpDate = status.pumpDateComponents.date {
             latestPumpStatus = status
@@ -201,6 +205,10 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         didSet {
             if oldValue != transmitterStartTime {
                 NSUserDefaults.standardUserDefaults().transmitterStartTime = transmitterStartTime
+
+                if let transmitterStartTime = transmitterStartTime, drift = oldValue?.distanceTo(transmitterStartTime) where abs(drift) > 1 {
+                    AnalyticsManager.transmitterTimeDidDrift(drift)
+                }
             }
         }
     }
@@ -208,35 +216,6 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
     var latestGlucoseMessage: GlucoseRxMessage?
 
     var latestPumpStatus: MySentryPumpStatusMessageBody?
-
-    // TODO: Keep a single copy of this value in PumpState
-    var pumpTimeZone: NSTimeZone? = NSUserDefaults.standardUserDefaults().pumpTimeZone {
-        didSet {
-            NSUserDefaults.standardUserDefaults().pumpTimeZone = pumpTimeZone
-
-            if let pumpTimeZone = pumpTimeZone {
-                if let basalRateSchedule = basalRateSchedule {
-                    self.basalRateSchedule = BasalRateSchedule(dailyItems: basalRateSchedule.items, timeZone: pumpTimeZone)
-                }
-
-                if let carbRatioSchedule = carbRatioSchedule {
-                    self.carbRatioSchedule = CarbRatioSchedule(unit: carbRatioSchedule.unit, dailyItems: carbRatioSchedule.items, timeZone: pumpTimeZone)
-                }
-
-                if let insulinSensitivitySchedule = insulinSensitivitySchedule {
-                    self.insulinSensitivitySchedule = InsulinSensitivitySchedule(unit: insulinSensitivitySchedule.unit, dailyItems: insulinSensitivitySchedule.items, timeZone: pumpTimeZone)
-                }
-
-                if let glucoseTargetRangeSchedule = glucoseTargetRangeSchedule {
-                    self.glucoseTargetRangeSchedule = GlucoseRangeSchedule(unit: glucoseTargetRangeSchedule.unit, dailyItems: glucoseTargetRangeSchedule.items, timeZone: pumpTimeZone)
-                }
-
-                if let pumpState = rileyLinkManager.pumpState {
-                    pumpState.timeZone = pumpTimeZone
-                }
-            }
-        }
-    }
 
     var transmitterState: State<Transmitter> = .NeedsConfiguration {
         didSet {
@@ -255,28 +234,77 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         }
     }
 
-    // TODO: Store this in PumpState
-    var pumpID: String? = NSUserDefaults.standardUserDefaults().pumpID {
-        didSet {
-            if pumpID?.characters.count != 6 {
-                pumpID = nil
+    var pumpID: String? {
+        get {
+            return pumpState?.pumpID
+        }
+        set {
+            guard newValue?.characters.count == 6 else {
+                return
             }
 
-            if let pumpID = pumpID {
+            if let pumpID = newValue {
                 let pumpState = PumpState(pumpID: pumpID)
 
-                if let timeZone = pumpTimeZone {
+                if let timeZone = self.pumpState?.timeZone {
                     pumpState.timeZone = timeZone
                 }
 
-                rileyLinkManager.pumpState = pumpState
+                pumpState.pumpModel = self.pumpState?.pumpModel
+
+                self.pumpState = pumpState
             } else {
-                rileyLinkManager.pumpState = nil
+                self.pumpState = nil
             }
 
             doseStore.pumpID = pumpID
 
             NSUserDefaults.standardUserDefaults().pumpID = pumpID
+        }
+    }
+
+    var pumpState: PumpState? {
+        didSet {
+            rileyLinkManager.pumpState = pumpState
+
+            if let oldValue = oldValue {
+                NSNotificationCenter.defaultCenter().removeObserver(self, name: PumpState.ValuesDidChangeNotification, object: oldValue)
+            }
+
+            if let pumpState = pumpState {
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(pumpStateValuesDidChange(_:)), name: PumpState.ValuesDidChangeNotification, object: pumpState)
+            }
+        }
+    }
+
+    func pumpStateValuesDidChange(note: NSNotification) {
+        switch note.userInfo?[PumpState.PropertyKey] as? String {
+        case "timeZone"?:
+            NSUserDefaults.standardUserDefaults().pumpTimeZone = pumpState?.timeZone
+
+            if let pumpTimeZone = pumpState?.timeZone {
+                if let basalRateSchedule = basalRateSchedule {
+                    self.basalRateSchedule = BasalRateSchedule(dailyItems: basalRateSchedule.items, timeZone: pumpTimeZone)
+                }
+
+                if let carbRatioSchedule = carbRatioSchedule {
+                    self.carbRatioSchedule = CarbRatioSchedule(unit: carbRatioSchedule.unit, dailyItems: carbRatioSchedule.items, timeZone: pumpTimeZone)
+                }
+
+                if let insulinSensitivitySchedule = insulinSensitivitySchedule {
+                    self.insulinSensitivitySchedule = InsulinSensitivitySchedule(unit: insulinSensitivitySchedule.unit, dailyItems: insulinSensitivitySchedule.items, timeZone: pumpTimeZone)
+                }
+
+                if let glucoseTargetRangeSchedule = glucoseTargetRangeSchedule {
+                    self.glucoseTargetRangeSchedule = GlucoseRangeSchedule(unit: glucoseTargetRangeSchedule.unit, dailyItems: glucoseTargetRangeSchedule.items, timeZone: pumpTimeZone)
+                }
+            }
+        case "pumpModel"?:
+            NSUserDefaults.standardUserDefaults().pumpModelNumber = pumpState?.pumpModel?.rawValue
+        case "lastHistoryDump"?, "awakeUntil"?:
+            break
+        default:
+            break
         }
     }
 
@@ -311,6 +339,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             doseStore.basalProfile = basalRateSchedule
 
             NSUserDefaults.standardUserDefaults().basalRateSchedule = basalRateSchedule
+
+            AnalyticsManager.didChangeBasalRateSchedule()
         }
     }
 
@@ -319,6 +349,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             carbStore?.carbRatioSchedule = carbRatioSchedule
 
             NSUserDefaults.standardUserDefaults().carbRatioSchedule = carbRatioSchedule
+
+            AnalyticsManager.didChangeCarbRatioSchedule()
         }
     }
 
@@ -327,6 +359,10 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             doseStore.insulinActionDuration = insulinActionDuration
 
             NSUserDefaults.standardUserDefaults().insulinActionDuration = insulinActionDuration
+
+            if oldValue != insulinActionDuration {
+                AnalyticsManager.didChangeInsulinActionDuration()
+            }
         }
     }
 
@@ -336,24 +372,32 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             doseStore.insulinSensitivitySchedule = insulinSensitivitySchedule
 
             NSUserDefaults.standardUserDefaults().insulinSensitivitySchedule = insulinSensitivitySchedule
+
+            AnalyticsManager.didChangeInsulinSensitivitySchedule()
         }
     }
 
     var glucoseTargetRangeSchedule: GlucoseRangeSchedule? = NSUserDefaults.standardUserDefaults().glucoseTargetRangeSchedule {
         didSet {
             NSUserDefaults.standardUserDefaults().glucoseTargetRangeSchedule = glucoseTargetRangeSchedule
+
+            AnalyticsManager.didChangeGlucoseTargetRangeSchedule()
         }
     }
 
     var maximumBasalRatePerHour: Double? = NSUserDefaults.standardUserDefaults().maximumBasalRatePerHour {
         didSet {
             NSUserDefaults.standardUserDefaults().maximumBasalRatePerHour = maximumBasalRatePerHour
+
+            AnalyticsManager.didChangeMaximumBasalRate()
         }
     }
 
     var maximumBolus: Double? = NSUserDefaults.standardUserDefaults().maximumBolus {
         didSet {
             NSUserDefaults.standardUserDefaults().maximumBolus = maximumBolus
+
+            AnalyticsManager.didChangeMaximumBolus()
         }
     }
 
@@ -435,6 +479,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             loopManager.addCarbEntryAndRecommendBolus(newEntry) { (units, error) in
                 if let error = error {
                     self.logger?.addError(error, fromSource: error is CarbStore.Error ? "CarbStore" : "Bolus")
+                } else {
+                    AnalyticsManager.didAddCarbsFromWatch(carbEntry.value)
                 }
 
                 completionHandler?(units: units, error: error)
@@ -457,6 +503,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
                 self.loopManager.enactBolus(bolus.value) { (success, error) in
                     if !success {
                         NotificationManager.sendBolusFailureNotificationForAmount(bolus.value, atDate: bolus.startDate)
+                    } else {
+                        AnalyticsManager.didSetBolusFromWatch(bolus.value)
                     }
 
                     replyHandler([:])
@@ -501,6 +549,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
     private(set) var loopManager: LoopDataManager!
 
     override init() {
+        let pumpID = NSUserDefaults.standardUserDefaults().pumpID
+
         doseStore = DoseStore(
             pumpID: pumpID,
             insulinActionDuration: insulinActionDuration,
@@ -512,20 +562,22 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             insulinSensitivitySchedule: insulinSensitivitySchedule
         )
 
-        let pumpState: PumpState?
-
         if let pumpID = pumpID {
-            pumpState = PumpState(pumpID: pumpID)
+            let pumpState = PumpState(pumpID: pumpID)
 
-            if let timeZone = pumpTimeZone {
-                pumpState?.timeZone = timeZone
+            if let timeZone = NSUserDefaults.standardUserDefaults().pumpTimeZone {
+                pumpState.timeZone = timeZone
             }
-        } else {
-            pumpState = nil
+
+            if let pumpModelNumber = NSUserDefaults.standardUserDefaults().pumpModelNumber {
+                pumpState.pumpModel = PumpModel(rawValue: pumpModelNumber)
+            }
+
+            self.pumpState = pumpState
         }
 
         rileyLinkManager = RileyLinkDeviceManager(
-            pumpState: pumpState,
+            pumpState: self.pumpState,
             autoConnectIDs: connectedPeripheralIDs
         )
 
