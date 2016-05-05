@@ -67,9 +67,8 @@ class LoopDataManager {
                     }
                 }
             },
-            center.addObserverForName(DeviceDataManager.PumpStatusUpdatedNotification, object: deviceDataManager, queue: nil) { (note) -> Void in
-                // Sentry packets are sent in groups of 3, 5s apart. Wait 11s to avoid conflicting comms.
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(11 * NSEC_PER_SEC)), self.dataAccessQueue) {
+            center.addObserverForName(DeviceDataManager.PumpEventsUpdatedNotification, object: deviceDataManager, queue: nil) { (note) -> Void in
+                dispatch_async(self.dataAccessQueue) {
                     self.insulinEffect = nil
                     self.loop()
                 }
@@ -278,12 +277,19 @@ class LoopDataManager {
      */
     private func updatePredictedGlucoseAndRecommendedBasal() throws {
         guard let
-            glucose = self.deviceDataManager.glucoseStore?.latestGlucose,
+            glucose = self.deviceDataManager.glucoseStore?.latestGlucose
+            else
+        {
+            self.predictedGlucose = nil
+            throw Error.MissingDataError("Cannot predict glucose due to missing latest glucose")
+        }
+        
+        guard let
             pumpStatusDate = self.deviceDataManager.latestPumpStatus?.pumpDateComponents.date
             else
         {
             self.predictedGlucose = nil
-            throw Error.MissingDataError("Cannot predict glucose due to missing input data")
+            throw Error.MissingDataError("Cannot predict glucose due to missing latest pump status")
         }
 
         let startDate = NSDate()

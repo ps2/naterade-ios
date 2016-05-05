@@ -16,6 +16,7 @@ import MinimedKit
 import RileyLinkKit
 import WatchConnectivity
 import xDripG5
+import NightscoutUploadKit
 
 enum State<T> {
     case NeedsConfiguration
@@ -37,6 +38,10 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
     lazy var logger = DiagnosticLogger()
 
     let rileyLinkManager: RileyLinkDeviceManager
+    
+    var nightscoutUploader: NightscoutUploader
+    
+    var lastHistoryAttempt = NSDate()
 
     var transmitter: Transmitter? {
         switch transmitterState {
@@ -138,6 +143,9 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             dispatch_after(delay, dispatch_get_main_queue()) {
                 self.getPumpHistory(device)
             }
+            
+            let source = "rileylink://medtronic/\(device.name)"
+            nighscoutUploader.handlePumpStatus(status, source)
         }
     }
     
@@ -145,19 +153,20 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         device.ops!.getHistoryEventsSinceDate(observingPumpEventsSince) { (response) -> Void in
             switch response {
                 case .Success(let (events, pumpModel)):
-                    NSLog("fetchHistory succeeded.")
                     self.handleNewHistoryEvents(events, pumpModel: pumpModel)
                     NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.PumpEventsUpdatedNotification, object: self)
 
                 case .Failure(let error):
-                    NSLog("History fetch failed: %@", String(error))
+                    self.logger?.addError(error, fromSource: "RileyLink")
             }
         }
     }
     
     private func handleNewHistoryEvents(events: [PumpEvent], pumpModel: PumpModel) {
-        // TODO: get insulin doses from history
+        // TODO: extract insulin doses and add to doseStore
         // TODO: upload events to Nightscout
+        let source = "rileylink://medtronic/\(pumpModel)"
+        nightscoutUploader.processPumpEvents(events, source: source, pumpModel: pumpModel)
     }
 
     private func checkPumpReservoirForAmount(newAmount: Double, previousAmount: Double, timeLeft: NSTimeInterval) {
@@ -556,6 +565,10 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             pumpState: pumpState,
             autoConnectIDs: connectedPeripheralIDs
         )
+        
+        nightscoutUploader = NightscoutUploader()
+        nightscoutUploader.siteURL = "https://pete-crm.herokuapp.com"
+        nightscoutUploader.APISecret = "ouvbavNanUt3"
         
         let calendar = NSCalendar.currentCalendar()
         observingPumpEventsSince = calendar.dateByAddingUnit(.Day, value: -1, toDate: NSDate(), options: [])!
