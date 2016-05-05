@@ -117,8 +117,8 @@
 		43F78D5B1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D5A1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json */; };
 		43F78D5D1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F78D5C1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json */; };
 		C12618441CDAE41B0064A849 /* RemoteSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1A1BA1B1CB9773A00A72FD1 /* RemoteSettings.plist */; };
+		C12618481CDB085A0064A849 /* Crypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C12618471CDB085A0064A849 /* Crypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C17E14851CD30EC100851C67 /* NightscoutUploadKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C17E14841CD30EC100851C67 /* NightscoutUploadKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C17E14871CD313FA00851C67 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C17E14861CD313FA00851C67 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,7 +179,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C17E14851CD30EC100851C67 /* NightscoutUploadKit.framework in Embed Frameworks */,
-				C17E14871CD313FA00851C67 /* CryptoSwift.framework in Embed Frameworks */,
+				C12618481CDB085A0064A849 /* Crypto.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,9 +306,9 @@
 		43F78D581C914C57002152D1 /* recommend_temp_basal_high_and_falling.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_high_and_falling.json; sourceTree = "<group>"; };
 		43F78D5A1C914CAB002152D1 /* recommend_temp_basal_in_range_and_rising.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_in_range_and_rising.json; sourceTree = "<group>"; };
 		43F78D5C1C914CEA002152D1 /* recommend_temp_basal_high_and_rising.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_temp_basal_high_and_rising.json; sourceTree = "<group>"; };
+		C12618471CDB085A0064A849 /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
 		C17E14821CD30E4600851C67 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NightscoutUploadKit.framework; path = Carthage/Build/iOS/NightscoutUploadKit.framework; sourceTree = "<group>"; };
 		C17E14841CD30EC100851C67 /* NightscoutUploadKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NightscoutUploadKit.framework; path = Carthage/Build/iOS/NightscoutUploadKit.framework; sourceTree = "<group>"; };
-		C17E14861CD313FA00851C67 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		C1A1BA1B1CB9773A00A72FD1 /* RemoteSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemoteSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,8 +383,6 @@
 		43776F831B8022E90074EA36 = {
 			isa = PBXGroup;
 			children = (
-				C17E14861CD313FA00851C67 /* CryptoSwift.framework */,
-				C17E14841CD30EC100851C67 /* NightscoutUploadKit.framework */,
 				43E3449B1B9CB08800C85C07 /* Naterade.playground */,
 				43776F8E1B8022E90074EA36 /* Naterade */,
 				43A943731B926B7B0051FA24 /* WatchApp */,
@@ -586,6 +584,8 @@
 		968DCD53F724DE56FFE51920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C12618471CDB085A0064A849 /* Crypto.framework */,
+				C17E14841CD30EC100851C67 /* NightscoutUploadKit.framework */,
 				C17E14821CD30E4600851C67 /* NightscoutUploadKit.framework */,
 				439897381CD2F82C00223065 /* AmplitudeFramework.framework */,
 				43F78D481C914197002152D1 /* CarbKit.framework */,

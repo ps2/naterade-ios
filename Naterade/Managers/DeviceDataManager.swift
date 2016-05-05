@@ -149,7 +149,7 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             }
             
             let source = "rileylink://medtronic/\(device.name)"
-            nighscoutUploader.handlePumpStatus(status, source)
+            nightscoutUploader.handlePumpStatus(status, device: source)
         }
     }
     
