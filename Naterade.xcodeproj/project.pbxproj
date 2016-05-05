@@ -37,7 +37,22 @@
 		43776F971B8022E90074EA36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43776F951B8022E90074EA36 /* Main.storyboard */; };
 		43776F991B8022E90074EA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43776F981B8022E90074EA36 /* Assets.xcassets */; };
 		43776F9C1B8022E90074EA36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43776F9A1B8022E90074EA36 /* LaunchScreen.storyboard */; };
+		437CEEBC1CD6DE6A003C8C80 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CEEBB1CD6DE6A003C8C80 /* HUDView.swift */; };
+		437CEEBE1CD6E0CB003C8C80 /* LoopCompletionHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CEEBD1CD6E0CB003C8C80 /* LoopCompletionHUDView.swift */; };
+		437CEEC01CD6FCD8003C8C80 /* BasalRateHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CEEBF1CD6FCD8003C8C80 /* BasalRateHUDView.swift */; };
+		437CEEC81CD84CBB003C8C80 /* ReservoirVolumeHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CEEC71CD84CBB003C8C80 /* ReservoirVolumeHUDView.swift */; };
+		437CEECA1CD84DB7003C8C80 /* BatteryLevelHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CEEC91CD84DB7003C8C80 /* BatteryLevelHUDView.swift */; };
+		437CEECB1CD85C5C003C8C80 /* FixtureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4346D1F91C790F6F00ABAFE3 /* FixtureData.swift */; };
+		437CEECC1CD86163003C8C80 /* clean_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4346D1EA1C77FF0E00ABAFE3 /* clean_glucose.json */; };
+		437CEECD1CD86165003C8C80 /* iob.json in Resources */ = {isa = PBXBuildFile; fileRef = 438C5D481C7FFC8D00FCCEC5 /* iob.json */; };
+		437CEECE1CD86169003C8C80 /* normalize_history.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EB40BD1C839DC400472A8C /* normalize_history.json */; };
+		437CEECF1CD8616C003C8C80 /* predict_glucose_from_dose.json in Resources */ = {isa = PBXBuildFile; fileRef = 4346D1E91C77FF0E00ABAFE3 /* predict_glucose_from_dose.json */; };
+		437CEED01CD86170003C8C80 /* predict_glucose.json in Resources */ = {isa = PBXBuildFile; fileRef = 43EB40BF1C839DFB00472A8C /* predict_glucose.json */; };
 		43971A2D1C8B94010013154F /* CommandResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43971A2C1C8B94010013154F /* CommandResponseViewController.swift */; };
+		439897351CD2F7DE00223065 /* NSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439897341CD2F7DE00223065 /* NSTimeInterval.swift */; };
+		439897371CD2F80600223065 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439897361CD2F80600223065 /* AnalyticsManager.swift */; };
+		439897391CD2F82C00223065 /* AmplitudeFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439897381CD2F82C00223065 /* AmplitudeFramework.framework */; };
+		4398973B1CD2FC2000223065 /* NSDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4398973A1CD2FC2000223065 /* NSDateFormatter.swift */; };
 		439A30B71C540CF600059771 /* AddCarbsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A30B61C540CF600059771 /* AddCarbsInterfaceController.swift */; };
 		43A567691C94880B00334FAC /* LoopDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A567681C94880B00334FAC /* LoopDataManager.swift */; };
 		43A5676B1C96155700334FAC /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */; };
@@ -51,6 +66,7 @@
 		43A9438E1B926B7B0051FA24 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9438D1B926B7B0051FA24 /* ComplicationController.swift */; };
 		43A943901B926B7B0051FA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A9438F1B926B7B0051FA24 /* Assets.xcassets */; };
 		43A943941B926B7B0051FA24 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 43A943721B926B7B0051FA24 /* WatchApp.app */; };
+		43B1E3DE1CD48B6B00A46274 /* NSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439897341CD2F7DE00223065 /* NSTimeInterval.swift */; };
 		43C094481CAB9A21001F6403 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C094471CAB9A21001F6403 /* NSUserDefaults.swift */; };
 		43C0944A1CACCC73001F6403 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C094491CACCC73001F6403 /* NotificationManager.swift */; };
 		43CA93371CB98079000026B5 /* MinimedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CA93361CB98079000026B5 /* MinimedKit.framework */; };
@@ -208,8 +224,17 @@
 		43776F961B8022E90074EA36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43776F981B8022E90074EA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43776F9B1B8022E90074EA36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		437CEEBB1CD6DE6A003C8C80 /* HUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		437CEEBD1CD6E0CB003C8C80 /* LoopCompletionHUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopCompletionHUDView.swift; sourceTree = "<group>"; };
+		437CEEBF1CD6FCD8003C8C80 /* BasalRateHUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasalRateHUDView.swift; sourceTree = "<group>"; };
+		437CEEC71CD84CBB003C8C80 /* ReservoirVolumeHUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservoirVolumeHUDView.swift; sourceTree = "<group>"; };
+		437CEEC91CD84DB7003C8C80 /* BatteryLevelHUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelHUDView.swift; sourceTree = "<group>"; };
 		438C5D481C7FFC8D00FCCEC5 /* iob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iob.json; sourceTree = "<group>"; };
 		43971A2C1C8B94010013154F /* CommandResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResponseViewController.swift; sourceTree = "<group>"; };
+		439897341CD2F7DE00223065 /* NSTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeInterval.swift; sourceTree = "<group>"; };
+		439897361CD2F80600223065 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		439897381CD2F82C00223065 /* AmplitudeFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AmplitudeFramework.framework; path = Carthage/Build/iOS/AmplitudeFramework.framework; sourceTree = "<group>"; };
+		4398973A1CD2FC2000223065 /* NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatter.swift; sourceTree = "<group>"; };
 		439A30B61C540CF600059771 /* AddCarbsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarbsInterfaceController.swift; sourceTree = "<group>"; };
 		43A567681C94880B00334FAC /* LoopDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopDataManager.swift; sourceTree = "<group>"; };
 		43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439897391CD2F82C00223065 /* AmplitudeFramework.framework in Frameworks */,
 				43F78D4C1C914197002152D1 /* CarbKit.framework in Frameworks */,
 				43EDDBF21C361C75007D89B5 /* CommonCrypto.framework in Frameworks */,
 				43F78D4D1C914197002152D1 /* GlucoseKit.framework in Frameworks */,
@@ -472,9 +498,11 @@
 				4346D1F51C78501000ABAFE3 /* ChartPoint.swift */,
 				43649A621C7A347F00523D7F /* CollectionType.swift */,
 				43E344A51B9E1B3300C85C07 /* NSBundle.swift */,
+				43CE7CDD1CA8B63E003CC1B0 /* NSDate.swift */,
+				4398973A1CD2FC2000223065 /* NSDateFormatter.swift */,
+				439897341CD2F7DE00223065 /* NSTimeInterval.swift */,
 				43E344A31B9E1B1C00C85C07 /* NSUserDefaults.swift */,
 				43DE92501C541832001FFDE1 /* UIColor.swift */,
-				43CE7CDD1CA8B63E003CC1B0 /* NSDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,7 +526,12 @@
 		43F5C2CF1B92A2ED003EB13D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				437CEEBF1CD6FCD8003C8C80 /* BasalRateHUDView.swift */,
+				437CEEC91CD84DB7003C8C80 /* BatteryLevelHUDView.swift */,
 				4346D1E61C77F5FE00ABAFE3 /* ChartTableViewCell.swift */,
+				437CEEBB1CD6DE6A003C8C80 /* HUDView.swift */,
+				437CEEBD1CD6E0CB003C8C80 /* LoopCompletionHUDView.swift */,
+				437CEEC71CD84CBB003C8C80 /* ReservoirVolumeHUDView.swift */,
 				43F5C2D81B92A58F003EB13D /* RileyLinkDeviceTableViewCell.swift */,
 				43EB40C11C83F84900472A8C /* StatusChartHighlightLayer.swift */,
 				43A5676A1C96155700334FAC /* SwitchTableViewCell.swift */,
@@ -509,6 +542,7 @@
 		43F5C2E41B93C5D4003EB13D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				439897361CD2F80600223065 /* AnalyticsManager.swift */,
 				43DBF0521C93EC8200B3C386 /* DeviceDataManager.swift */,
 				43F4EF1C1BA2A57600526CE1 /* DiagnosticLogger.swift */,
 				4315D2891CA5F45E00589052 /* DiagnosticLogger+LoopKit.swift */,
@@ -553,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				C17E14821CD30E4600851C67 /* NightscoutUploadKit.framework */,
+				439897381CD2F82C00223065 /* AmplitudeFramework.framework */,
 				43F78D481C914197002152D1 /* CarbKit.framework */,
 				43EDDBF01C361C75007D89B5 /* CommonCrypto.framework */,
 				43EDDBF51C361D24007D89B5 /* CommonCrypto.framework.dSYM */,
@@ -731,10 +766,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437CEECE1CD86169003C8C80 /* normalize_history.json in Resources */,
 				43776F9C1B8022E90074EA36 /* LaunchScreen.storyboard in Resources */,
 				43776F991B8022E90074EA36 /* Assets.xcassets in Resources */,
+				437CEECD1CD86165003C8C80 /* iob.json in Resources */,
+				437CEED01CD86170003C8C80 /* predict_glucose.json in Resources */,
 				43776F971B8022E90074EA36 /* Main.storyboard in Resources */,
 				C12618441CDAE41B0064A849 /* RemoteSettings.plist in Resources */,
+				437CEECC1CD86163003C8C80 /* clean_glucose.json in Resources */,
+				437CEECF1CD8616C003C8C80 /* predict_glucose_from_dose.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +832,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MinimedKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RileyLinkBLEKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RileyLinkKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AmplitudeFramework.framework",
 			);
 			outputPaths = (
 			);
@@ -819,6 +860,7 @@
 				43E344A41B9E1B1C00C85C07 /* NSUserDefaults.swift in Sources */,
 				43649A631C7A347F00523D7F /* CollectionType.swift in Sources */,
 				43DC87E91C8B7818005BC30D /* RileyLinkDeviceTableViewController.swift in Sources */,
+				437CEEBE1CD6E0CB003C8C80 /* LoopCompletionHUDView.swift in Sources */,
 				435400321C9F745500D5819C /* BolusSuggestionUserInfo.swift in Sources */,
 				43E3449F1B9D68E900C85C07 /* StatusTableViewController.swift in Sources */,
 				43E344A61B9E1B3300C85C07 /* NSBundle.swift in Sources */,
@@ -827,6 +869,7 @@
 				43DBF0591C93F73800B3C386 /* CarbEntryTableViewController.swift in Sources */,
 				43DE925C1C547A20001FFDE1 /* WatchContext.swift in Sources */,
 				43EB40861C82646A00472A8C /* StatusChartManager.swift in Sources */,
+				437CEEC81CD84CBB003C8C80 /* ReservoirVolumeHUDView.swift in Sources */,
 				43C0944A1CACCC73001F6403 /* NotificationManager.swift in Sources */,
 				43EB40C21C83F84900472A8C /* StatusChartHighlightLayer.swift in Sources */,
 				4315D2871CA5CC3B00589052 /* CarbEntryEditTableViewController.swift in Sources */,
@@ -834,13 +877,20 @@
 				43DBF04C1C93B8D700B3C386 /* BolusViewController.swift in Sources */,
 				43DBF0571C93F6EB00B3C386 /* ReservoirTableViewController.swift in Sources */,
 				435400341C9F878D00D5819C /* SetBolusUserInfo.swift in Sources */,
+				437CEECB1CD85C5C003C8C80 /* FixtureData.swift in Sources */,
+				437CEEBC1CD6DE6A003C8C80 /* HUDView.swift in Sources */,
 				4354003A1C9FB81100D5819C /* UIColor.swift in Sources */,
+				4398973B1CD2FC2000223065 /* NSDateFormatter.swift in Sources */,
+				437CEEC01CD6FCD8003C8C80 /* BasalRateHUDView.swift in Sources */,
 				43DBF0511C93C14100B3C386 /* PopoverInNavigationControllerSegue.swift in Sources */,
+				437CEECA1CD84DB7003C8C80 /* BatteryLevelHUDView.swift in Sources */,
 				43F78D261C8FC000002152D1 /* DoseMath.swift in Sources */,
 				4331E07A1C85650D00FBE832 /* ChartAxisValueDoubleLog.swift in Sources */,
+				439897371CD2F80600223065 /* AnalyticsManager.swift in Sources */,
 				4346D1F61C78501000ABAFE3 /* ChartPoint.swift in Sources */,
 				43F4EF1D1BA2A57600526CE1 /* DiagnosticLogger.swift in Sources */,
 				43DE92591C5479E4001FFDE1 /* CarbEntryUserInfo.swift in Sources */,
+				439897351CD2F7DE00223065 /* NSTimeInterval.swift in Sources */,
 				43DE92611C555C26001FFDE1 /* AbsorptionTimeType+CarbKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,6 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B1E3DE1CD48B6B00A46274 /* NSTimeInterval.swift in Sources */,
 				43F78D511C914444002152D1 /* DoseMath.swift in Sources */,
 				43F78D2E1C8FC58F002152D1 /* DoseMathTests.swift in Sources */,
 				43F78D3F1C911D2F002152D1 /* NateradeTests.swift in Sources */,
