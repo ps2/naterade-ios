@@ -39,9 +39,11 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
 
     let rileyLinkManager: RileyLinkDeviceManager
     
-    var nightscoutUploader: NightscoutUploader
+    var nightscoutUploader: NightscoutUploader?
     
     var lastHistoryAttempt = NSDate()
+
+    let shareClient: ShareClient?
 
     var transmitter: Transmitter? {
         switch transmitterState {
@@ -129,6 +131,32 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             doseStore.addReservoirValue(status.reservoirRemainingUnits, atDate: pumpDate) { (newValue, previousValue, error) -> Void in
                 if let error = error {
                     self.logger?.addError(error, fromSource: "DoseStore")
+                } else if self.latestGlucoseMessageDate == nil,
+                    let shareClient = self.shareClient,
+                        glucoseStore = self.glucoseStore,
+                        lastGlucose = glucoseStore.latestGlucose
+                    where lastGlucose.startDate.timeIntervalSinceNow < -NSTimeInterval(minutes: 5)
+                {
+                    // Load glucose from Share if our xDripG5 connection hasn't started
+                    shareClient.fetchLast(1) { (error, glucose) in
+                        if let error = error {
+                            self.logger?.addError(error, fromSource: "ShareClient")
+                        }
+
+                        guard let glucose = glucose?.first where lastGlucose.startDate.timeIntervalSinceDate(glucose.startDate) < -NSTimeInterval(minutes: 1) else {
+                            NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.PumpStatusUpdatedNotification, object: self)
+                            return
+                        }
+
+                        glucoseStore.addGlucose(glucose.quantity, date: glucose.startDate, displayOnly: true, device: nil) { (_, value, error) -> Void in
+                            if let error = error {
+                                self.logger?.addError(error, fromSource: "GlucoseStore")
+                            }
+
+                            NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.GlucoseUpdatedNotification, object: self)
+                            NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.PumpStatusUpdatedNotification, object: self)
+                        }
+                    }
                 } else {
                     NSNotificationCenter.defaultCenter().postNotificationName(self.dynamicType.PumpStatusUpdatedNotification, object: self)
                 }
@@ -149,7 +177,7 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             }
             
             let source = "rileylink://medtronic/\(device.name)"
-            nightscoutUploader.handlePumpStatus(status, device: source)
+            nightscoutUploader?.handlePumpStatus(status, device: source)
         }
     }
     
@@ -170,7 +198,7 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         // TODO: extract insulin doses and add to doseStore
         // TODO: upload events to Nightscout
         let source = "rileylink://medtronic/\(pumpModel)"
-        nightscoutUploader.processPumpEvents(events, source: source, pumpModel: pumpModel)
+        nightscoutUploader?.processPumpEvents(events, source: source, pumpModel: pumpModel)
     }
 
     private func checkPumpReservoirForAmount(newAmount: Double, previousAmount: Double, timeLeft: NSTimeInterval) {
@@ -210,10 +238,8 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
         if glucose != latestGlucoseMessage {
             latestGlucoseMessage = glucose
 
-            if glucose.glucose >= 20, let transmitterStartTime = transmitterStartTime, glucoseStore = glucoseStore {
+            if glucose.glucose >= 20, let startDate = latestGlucoseMessageDate, glucoseStore = glucoseStore {
                 let quantity = HKQuantity(unit: HKUnit.milligramsPerDeciliterUnit(), doubleValue: Double(glucose.glucose))
-
-                let startDate = NSDate(timeIntervalSince1970: transmitterStartTime).dateByAddingTimeInterval(NSTimeInterval(glucose.timestamp))
 
                 let device = HKDevice(name: "xDripG5", manufacturer: "Dexcom", model: "G5 Mobile", hardwareVersion: nil, firmwareVersion: nil, softwareVersion: String(xDripG5VersionNumber), localIdentifier: nil, UDIDeviceIdentifier: "00386270000002")
 
@@ -249,6 +275,14 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
     }
 
     var latestGlucoseMessage: GlucoseRxMessage?
+
+    var latestGlucoseMessageDate: NSDate? {
+        guard let glucose = latestGlucoseMessage, startTime = transmitterStartTime else {
+            return nil
+        }
+
+        return NSDate(timeIntervalSince1970: startTime).dateByAddingTimeInterval(NSTimeInterval(glucose.timestamp))
+    }
 
     var latestPumpStatus: MySentryPumpStatusMessageBody?
 
@@ -479,7 +513,7 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
 
     private func sendWatchContext() {
         if let session = watchSession where session.paired && session.watchAppInstalled {
-            let userInfo = WatchContext(pumpStatus: latestPumpStatus, glucose: latestGlucoseMessage, transmitterStartTime: transmitterStartTime).rawValue
+            let userInfo = WatchContext(pumpStatus: latestPumpStatus, glucose: latestGlucoseMessage, glucoseMessageDate: latestGlucoseMessageDate).rawValue
 
             let complicationShouldUpdate: Bool
 
@@ -618,12 +652,28 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
             autoConnectIDs: connectedPeripheralIDs
         )
         
-        nightscoutUploader = NightscoutUploader()
-        nightscoutUploader.siteURL = "https://pete-crm.herokuapp.com"
-        nightscoutUploader.APISecret = "ouvbavNanUt3"
+        if let  settings = NSBundle.mainBundle().remoteSettings,
+            siteURL = settings["NightscoutSiteURL"],
+            APISecret = settings["NightscoutAPISecret"]
+        {
+            nightscoutUploader = NightscoutUploader()
+            nightscoutUploader!.siteURL = siteURL
+            nightscoutUploader!.APISecret = APISecret
+        } else {
+            nightscoutUploader = nil
+        }
         
         let calendar = NSCalendar.currentCalendar()
         observingPumpEventsSince = calendar.dateByAddingUnit(.Day, value: -1, toDate: NSDate(), options: [])!
+
+        if let  settings = NSBundle.mainBundle().remoteSettings,
+                username = settings["ShareAccountName"],
+                password = settings["ShareAccountPassword"]
+        {
+            shareClient = ShareClient(username: username, password: password)
+        } else {
+            shareClient = nil
+        }
 
         super.init()
 
@@ -657,13 +707,13 @@ class DeviceDataManager: NSObject, CarbStoreDelegate, TransmitterDelegate, WCSes
 
 
 extension WatchContext {
-    convenience init(pumpStatus: MySentryPumpStatusMessageBody?, glucose: GlucoseRxMessage?, transmitterStartTime: NSTimeInterval?) {
+    convenience init(pumpStatus: MySentryPumpStatusMessageBody?, glucose: GlucoseRxMessage?, glucoseMessageDate: NSDate?) {
         self.init()
 
-        if let glucose = glucose, transmitterStartTime = transmitterStartTime where glucose.state > 5 {
+        if let glucose = glucose, date = glucoseMessageDate where glucose.state > 5 {
             glucoseValue = Int(glucose.glucose)
             glucoseTrend = Int(glucose.trend)
-            glucoseDate = NSDate(timeIntervalSince1970: transmitterStartTime).dateByAddingTimeInterval(NSTimeInterval(glucose.timestamp))
+            glucoseDate = date
         }
 
         if let status = pumpStatus, date = status.pumpDateComponents.date {
